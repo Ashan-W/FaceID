@@ -17,14 +17,15 @@ $fname = $_POST['fname'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
 $message = $_POST['message'];
+$cimage = $_POST['cimage'];
 
-$sql="INSERT INTO contactform (fname,phone,email,messages)
+$sql="INSERT INTO contactform (fname,phone,email,messages,cimage)
 
 VALUES
 
-('$fname','$phone','$email','$message')";
+('$fname','$phone','$email','$message','$cimage')";
 
- 
+echo $sql; 
 
 if (!mysqli_query($con, $sql))
 
@@ -35,6 +36,7 @@ if (!mysqli_query($con, $sql))
   }
 
 echo "1 record added";
+
 
  
 
