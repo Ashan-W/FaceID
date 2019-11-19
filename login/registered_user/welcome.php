@@ -21,7 +21,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
     <div class="page-header" >
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome..!</h1>
+    <img src="./img/2.jpg" alt="regi_user" class="center" width="150" height="200">
+        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
+        <h2>Welcome to FACE ID</h2>
     </div>
     <p>
         <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
@@ -30,5 +32,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <p>
         <a href="formhospital.html" class="btn btn-primary"> Enter Details</a>
     </p>
+    <div class="container" align="center">
+              
+                <button class="btn btn-warning" >VIEW INFORMATION PORTAL </button><br/><br/>
+                <button class="btn btn-warning">CONTACT THE FORENSIC DEPARTMENT</button><br/><br/>
+                <button class="btn btn-warning">SEARCH FOR MISSING PERSON</button><br/><br/>
+                <button class="btn btn-warning">ADD DETAILS ABOUT MISSING PERSON</button><br/><br/>
+                
+              </div>
 </body>
 </html>
