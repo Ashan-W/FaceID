@@ -26,12 +26,22 @@
                 <ul class="nav navbar-nav ml-auto text-uppercase">
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#services">about</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#search">Search for Missing</a></li>
-                    <!-- <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portfolio">information Portal</a></li> -->
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#infoportal">information Portal</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portal">Portal</a></li>
                     <!-- <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#database">unidentified database</a></li> -->
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact us</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="./login/register.php">Sign In</a></li>
-
+                    <li>
+                        <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          Sign In
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="./login/login.php">Admin</a>
+                          <a class="dropdown-item" href="./login/login.php">Police</a>
+                          <a class="dropdown-item" href="./login/login.php">Registered User</a>
+                        </div>
+                      </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -144,14 +154,6 @@
                         Missing Dates From: <input type="date" name="bday">
                         To: <input type="date" name="bday">
                         <input type="submit">
-                      <!-- </form> -->
-                      <br>
-                      <br>
-                      <!-- <form action="/action_page.php"></form> -->
-                        Upload images of tattos or anything special :
-                        <input type="file" name="pic" accept="image/*">
-                        <input type="submit">
-                      <!-- </form> -->
                       <br>
                       <br>
                       <button type="button" class="btn btn-outline-primary"><h3>Search</h3></button>
@@ -212,7 +214,7 @@
             <p align="center"><button type="button" class="btn btn-outline-primary"><h5>View More Data</h5></button></p>
         </div>
     </section>
-    <section id="portfolio" class="bg-light">
+    <section id="infoportal" class="bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -221,62 +223,62 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-md-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/imageicon.png"></a>
-                    <div class="portfolio-caption">
+                <div class="col-sm-6 col-md-4 infoportal-item">
+                    <a href="#infoportalModal1" class="infoportal-link" data-toggle="modal">
+                        <div class="infoportal-hover">
+                            <div class="infoportal-hover-content"></div>
+                        </div><img class="img-fluid" src="assets/img/imageicon.png" width="200" height="200"></a>
+                    <div class="infoportal-caption">
                         <h4><a href="imagegallery.html">Images</a></h4>
                         <p class="text-muted">Image Gallery</p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/videoicon.png"></a>
-                    <div class="portfolio-caption">
+                <div class="col-sm-6 col-md-4 infoportal-item">
+                    <a href="#infoportalModal2" class="infoportal-link" data-toggle="modal">
+                        <div class="infoportal-hover">
+                            <div class="infoportal-hover-content"></div>
+                        </div><img class="img-fluid" src="assets/img/videoicon.png" width="200" height="200"></a>
+                    <div class="infoportal-caption">
                         <h4><a href="videogallery.html">Videos</a></h4>
                         <p class="text-muted">Video Gallery</p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/magazineicon.png"></a>
-                    <div class="portfolio-caption">
+                <div class="col-sm-6 col-md-4 infoportal-item">
+                    <a href="#infoportalModal3" class="infoportal-link" data-toggle="modal">
+                        <div class="infoportal-hover">
+                            <div class="infoportal-hover-content"></div>
+                        </div><img class="img-fluid" src="assets/img/magazineicon.png" width="200" height="200"></a>
+                    <div class="infoportal-caption">
                         <h4><a href="magazinegallery.html">Magazines</a></h4>
                         <p class="text-muted">Data from Magazines</p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/booksicon.svg"></a>
-                    <div class="portfolio-caption">
+                <div class="col-sm-6 col-md-4 infoportal-item">
+                    <a href="#infoportalModal4" class="infoportal-link" data-toggle="modal">
+                        <div class="infoportal-hover">
+                            <div class="infoportal-hover-content"></div>
+                        </div><img class="img-fluid" src="assets/img/booksicon.png" width="200" height="200"></a>
+                    <div class="infoportal-caption">
                         <h4><a href="booksgallery.html">Books</a></h4>
                         <p class="text-muted">Data from Books</p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid img-fluid" src="assets/img/portfolio/paperarticleicon.jpg"></a>
-                    <div class="portfolio-caption">
+                <div class="col-sm-6 col-md-4 infoportal-item">
+                    <a href="#infoportalModal5" class="infoportal-link" data-toggle="modal">
+                        <div class="infoportal-hover">
+                            <div class="infoportal-hover-content"></div>
+                        </div><img class="img-fluid img-fluid" src="assets/img/paperarticleicon.png" width="170" height="170"></a>
+                    <div class="infoportal-caption">
                         <h4><a href="articlegallery.html">Paper Articles</a></h4>
                         <p class="text-muted">Articles</p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/othericon.jpg"></a>
-                    <div class="portfolio-caption">
+                <div class="col-sm-6 col-md-4 infoportal-item">
+                    <a href="#infoportalModal6" class="infoportal-link" data-toggle="modal">
+                        <div class="infoportal-hover">
+                            <div class="infoportal-hover-content"></div>
+                        </div><img class="img-fluid" src="assets/img/othericon.png" width="200" height="200"></a>
+                    <div class="infoportal-caption">
                         <h4><a href="othergallery.html">Other Resources</a></h4>
                         <p class="text-muted">All other resources</p>
                     </div>
@@ -290,20 +292,6 @@
                 <div class="col-lg-12 text-center">
                     <h2 class="text-uppercase">Portal</h2>
                     <h3 class="text-muted section-subheading">&nbsp;View the Database</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div>
-                    <img src="/assets/img/portfolio/imageicon.png">
-                    Ashan Tharindu
-                </div>
-                <div>
-                    <img src="/assets/img/portfolio/imageicon.png">
-                    Ashan Tharindu
-                </div>
-                <div>
-                    Image 1
-                    Image 2
                 </div>
             </div>
         </div>
