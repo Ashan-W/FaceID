@@ -104,7 +104,7 @@ body{
     display:inline-block;
     background:rgba(255,255,255,.1);
   }
-  .login-form .group label .icon:before,
+  /* .login-form .group label .icon:before,
   .login-form .group label .icon:after{
     content:'';
     width:10px;
@@ -112,7 +112,7 @@ body{
     background:#fff;
     position:absolute;
     transition:all .2s ease-in-out 0s;
-  }
+  } */
   .login-form .group label .icon:before{
     left:3px;
     width:5px;
