@@ -17,13 +17,13 @@ $fname = $_POST['fname'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
 $message = $_POST['message'];
-$cimage = $_POST['cimage'];
 
-$sql="INSERT INTO contactform (fname,phone,email,messages,cimage)
+
+$sql="INSERT INTO contactform (fname,phone,email,messages,)
 
 VALUES
 
-('$fname','$phone','$email','$message','$cimage')";
+('$fname','$phone','$email','$message',)";
 
 echo $sql; 
 
