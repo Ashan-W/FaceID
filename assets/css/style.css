@@ -129,13 +129,13 @@ body{
   .login-form .group .check:checked + label{
     color:#fff;
   }
-  .login-form .group .check:checked + label .icon{
+  /* .login-form .group .check:checked + label .icon{
     background:#1161ee;
   }
   .login-form .group .check:checked + label .icon:before{
     -webkit-transform:scale(1) rotate(45deg);
             transform:scale(1) rotate(45deg);
-  }
+  } */
   .login-form .group .check:checked + label .icon:after{
     -webkit-transform:scale(1) rotate(-45deg);
             transform:scale(1) rotate(-45deg);
