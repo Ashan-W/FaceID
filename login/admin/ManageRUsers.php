@@ -47,11 +47,9 @@
                 <th style="padding:10px; text-align:center">NIC</th>
                 <th style="padding:10px; text-align:center">Contact</th>
                 <th style="padding:10px; text-align:center">Email</th>
-                <th style="padding:10px; text-align:center"></th>
-                
+                <th style="padding:10px; text-align:center"></th>            
             </tr>
         </thead>
-
         <?php while ($row = mysqli_fetch_array($results)) { ?>
             <tr>
                 <td style="padding:10px; text-align:center"><?php echo $row['Name'];?></td>
@@ -61,16 +59,12 @@
                 <td style="padding:10px; text-align:center"><?php echo $row['Email'];?></td>
                 <td style="padding:10px; text-align:center"><button type="button" class="btn btn-secondary">Edit</button></td>
             </tr>
-
         <?php } ?>
-    
-    
     </table>
 
     </div>
 
-    <script src="../../assets/js/jquery.min.js"></script>
-    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="../../assets/js/agency.js"></script>
     
