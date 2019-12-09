@@ -15,30 +15,26 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta charset="UTF-8">
     <title>Welcome</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; text-align: center; }
-    </style>
-</head>
+    <link rel="stylesheet" type="text/css" href="style_css/welcome.css">
+ </head>
 <body>
-    <div class="page-header" >
-    <img src="./img/2.jpg" alt="regi_user" class="center" width="150" height="200">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
-        <h2>Welcome to FACE ID</h2>
+    <div class="header-container">
+        <div class="page-header title-container" >
+            <img src="./img/2.jpg" alt="regi_user" class="center" width="150" height="200">
+            <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
+            <h2>Welcome to FACE ID</h2>
+        </div>
+        <div class="header-btn-cantainer">
+            <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
+            <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+            <a href="formhospital.html" class="btn btn-primary"> Enter Details</a>
+        </div>
     </div>
-    <p>
-        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-    </p>
-    <p>
-        <a href="formhospital.html" class="btn btn-primary"> Enter Details</a>
-    </p>
-    <div class="container" align="center">
-              
-                <button class="btn btn-warning" >VIEW INFORMATION PORTAL </button><br/><br/>
-                <button class="btn btn-warning">CONTACT THE FORENSIC DEPARTMENT</button><br/><br/>
-                <button class="btn btn-warning">SEARCH FOR MISSING PERSON</button><br/><br/>
-                <button class="btn btn-warning">ADD DETAILS ABOUT MISSING PERSON</button><br/><br/>
-                
-              </div>
+    <div class="container" align="center">           
+        <button class="btn btn-warning" >VIEW INFORMATION PORTAL </button><br/><br/>
+        <button class="btn btn-warning">CONTACT THE FORENSIC DEPARTMENT</button><br/><br/>
+        <button class="btn btn-warning">SEARCH FOR MISSING PERSON</button><br/><br/>
+        <button class="btn btn-warning">ADD DETAILS ABOUT MISSING PERSON</button><br/><br/>
+    </div>
 </body>
 </html>
