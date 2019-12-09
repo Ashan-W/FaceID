@@ -113,11 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-<<<<<<< HEAD
-            <!-- <p>Don't have an account? <a href="register.php">Sign up now</a>.</p> -->
-=======
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
->>>>>>> a65dca921a8cb392851e4ff3b2bd8c25a4ed2907
         </form>
     </div>    
 </body>
