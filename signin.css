@@ -5,6 +5,8 @@ input[type=text], select, textarea{
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+
+    /* this is testing pull request */
 }
 input[type=date], select, textarea{
     width: 100%;
