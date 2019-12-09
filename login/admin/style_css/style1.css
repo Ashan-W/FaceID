@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body  { 
   background-image: url("../img/1.jpg"); 
   background-color: #cccccc; 
@@ -21,5 +22,19 @@ text-align: center;
   margin-top: 100px;
   margin-left: 700px;
   color: white;
+=======
+body  {
+  background-image: url("../img/1.jpg");
+  background-color: #cccccc;
+}
+
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+>>>>>>> a65dca921a8cb392851e4ff3b2bd8c25a4ed2907
 }
 
