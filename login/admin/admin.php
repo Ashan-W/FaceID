@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password,);
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
@@ -113,11 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-<<<<<<< HEAD
             <!-- <p>Don't have an account? <a href="register.php">Sign up now</a>.</p> -->
-=======
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
->>>>>>> a65dca921a8cb392851e4ff3b2bd8c25a4ed2907
         </form>
     </div>    
 </body>
