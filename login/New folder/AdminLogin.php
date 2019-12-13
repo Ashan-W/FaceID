@@ -82,20 +82,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
-?>
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 900px; padding-left: 500px; padding-top: 100px;}
-    </style>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="adminlogin.css">
+
+   
+    
+    
+
 </head>
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
@@ -103,11 +104,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" style="position: fixed; margin-left: 250px;" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">about</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#search">Search for Missing</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#infoportal">information Portal</a></li>
-                    <!-- <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portal">Portal</a></li> -->
-                    <!-- <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#database">unidentified database</a></li> -->
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="../../index.html">about</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="../../index.html">Search for Missing</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="../../index.html#infoportal">information Portal</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact us</a></li>
                     <li>
                         <div class="dropdown" style="margin-left: 180px; ">
@@ -115,36 +114,65 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             Sign In
                             </button>
                             <div class="dropdown-menu" >
-                                <a class="dropdown-item" href="./login/admin/admin.php">Admin</a>
-                                <a class="dropdown-item" href="./login/police/police.php">Police</a>
-                                <a class="dropdown-item" href="./login/registered_user/login.php">Registered User</a>
-                            </div>
+                                    <a class="dropdown-item" href="./login/admin/AdminLogin.html">Admin</a>
+                                    <a class="dropdown-item" href="./login/registered_user/login.php">Registered User</a>
+                                </div>
                       </div>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+   <!-- <div class="page-header header-filter" style="background-image: url('../assets/img/faceid.jpg'); background-size: cover; background-position: top center;height:100vh; ">
+    
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+               
+    </div> -->
 
-    <div class="wrapper">
-        <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control">
-                <span class="help-block"><?php echo $password_err; ?></span>
+    <div class="container login-container ">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                        
+                    <h3>Forensic Department</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username*" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="ForgetPwd">Forget Password?</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 login-form-2">
+                         
+                        <h3> <img class="Policeimg" src="slpolice.jpg" alt="Police" align="left">Police</h3>
+                   
+                    <form>
+                        
+                            
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Username *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+
+                            <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
-            </div>
-            <!-- <p>Don't have an account? <a href="register.php">Sign up now</a>.</p> -->
-        </form>
-    </div>    
 </body>
 </html>
