@@ -82,20 +82,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
-?>
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 900px; padding-left: 500px; padding-top: 100px;}
-    </style>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link href="../assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <!-- <link href="../assets/css/demo.css" rel="stylesheet" /> -->
+
 </head>
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
@@ -125,26 +128,82 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </div>
     </nav>
+    <div class="page-header header-filter" style="background-image: url('../../assets/img/img/profile_city.jpg'); background-size: cover; background-position: top center;height:100vh">
+    <!-- <div class="container">
+      <div class="row" style="padding-top:180px;">
+        <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+          <div class="card card-login" style="padding:50px;background-color:#eee;border: solid #222">
+            <form class="form" method="" action="" >
+              <div class="card-header card-header-primary text-center">
+                <h4 class="card-title">Login</h4>
+              </div>
+              <br>
+              <div class="card-body">
+                <div class="input-group">
+                  <div class="input-group-prepend" >
+                    <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="First Name...">
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">mail</i>
+                    </span>
+                  </div>
+                  <input type="email" class="form-control" placeholder="Email...">
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+                  <input type="password" class="form-control" placeholder="Password...">
+                </div>
+              </div>
+              <div class="footer text-center">
+                <a href="#pablo" class="btn btn-lg" style="background-color:#0c1446">Get Started</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
-    <div class="wrapper">
-        <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control">
-                <span class="help-block"><?php echo $password_err; ?></span>
+    <div class="bg-img" style="background-image: url('../../assets/img/Gallery/Slides/party.jfif');">                                
+    <div class="overlay"></div>
+  </div>
+
+        <div class="container text-center" style="padding-top:200px;font-family: 'Roboto';">
+            <div class="row justify-content-md-center col-lg-10">
+                <div class="col-md-6 col-lg-6" style="padding:50px;background-color: #223;border-radius: 30px;border: solid royalblue;">
+                    <!-- Logo eka danna -->
+                    <h4 style="color:white"> Login </h4>
+                    <br>
+
+                    <form #form="" autocomplete="off">
+                        <div class="form-group">
+                            <label for="Email"></label>
+                            <input required ngModel name="email"  id="email" class="form-control" placeholder="Email Address..." style="background-color: #223;" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Password"></label>
+                            <input required name="password"id="password" type="password" class="form-control  white-text" style="background-color: #223;"  placeholder="Password..." >
+                        </div>
+                        <br>
+                        <div class="col-lg-9 container text-center">
+                            <button class="btn btn-lg btn-round btn-block white-text" style="background-color: royalblue;color:white"> Log in </button>
+                        </div>
+                        <a class="button-cus btn" href="#"> Dont have an account ? Sign up Here </a>
+                        <a class="button-cus btn" href="#"> Forgot your Password ? </a>          
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
-            </div>
-            <!-- <p>Don't have an account? <a href="register.php">Sign up now</a>.</p> -->
-        </form>
-    </div>    
+
+
+
 </body>
 </html>
