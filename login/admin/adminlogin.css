@@ -63,3 +63,11 @@ body {
     background-image:"";
 
 }
+
+/* Table in 'Manage User' pages */
+
+.table1{
+    padding-top:2%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
