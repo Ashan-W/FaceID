@@ -90,42 +90,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 900px; padding-left: 500px; padding-top: 100px;}
     </style>
 </head>
-<body id="page-top">
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#page-top">FaceID</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" style="position: fixed; margin-left: 250px;" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto text-uppercase">
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">about</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#search">Search for Missing</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#infoportal">information Portal</a></li>
-                    <!-- <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portal">Portal</a></li> -->
-                    <!-- <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#database">unidentified database</a></li> -->
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact us</a></li>
-                    <li>
-                        <div class="dropdown" style="margin-left: 180px; ">
-                            <button type="button" class="btn btn-primary dropdown-toggle btn-signIN"  data-toggle="dropdown">
-                            Sign In
-                            </button>
-                            <div class="dropdown-menu" >
-                                <a class="dropdown-item" href="./login/admin/admin.php">Admin</a>
-                                <a class="dropdown-item" href="./login/police/police.php">Police</a>
-                                <a class="dropdown-item" href="./login/registered_user/login.php">Registered User</a>
-                            </div>
-                      </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+<body>
     <div class="wrapper">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>

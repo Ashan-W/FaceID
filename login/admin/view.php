@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head >
-    <meta charset="UTF-8">
+<head>
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
@@ -10,10 +11,8 @@
     
     <link rel="stylesheet" type="text/css" href="./adminlogin.css">
     <link rel="stylesheet" href="../../assets/css/style.css"> 
-
 </head>
-
-
+<body>
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container"><a class="navbar-brand" href="../../index.html">FaceID</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
@@ -39,48 +38,53 @@
     </nav>
 
     <h2 style="color:black; text-align: center; padding-top: 10%;">Registered Users</h2>
-   
-    <div class="table1">
-        
-        <table class="table table-dark table-striped">
-          <thead>
-            <tr>
-              <th>Username</th>
-              <th>NIC</th>
-              <th>Email Address</th>
-              <th>Contact Number</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>John</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
-              <td>0777777777</td>
-              <td><button type="button" class="btn btn-secondary">Edit</button></td>
+<?php
+/* Attempt MySQL server connection. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+$link = mysqli_connect("localhost", "root", "", "faceid");
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Attempt select query execution
+$sql = "SELECT * FROM users";
 
-            </tr>
-            <tr>
-                <td>John</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
-              <td>0777777777</td>
-              <td><button type="button" class="btn btn-secondary">Edit</button></td>
+if($result = mysqli_query($link, $sql)){
+    if(mysqli_num_rows($result) > 0){
+        echo "<table 
+                border=1 
+                align=center 
+                class=table table-dark table-striped
 
-            </tr>
-            <tr>
-                <td>John</td>
-              <td>Doe</td>
-              <td>john@example.com</td>
-              <td>0777777777</td>
-              <td><button type="button" class="btn btn-secondary">Edit</button></td>
+            >";
+            echo "<tr>";
+                echo "<th>id</th>";
+                echo "<th>User_Name</th>";
+                echo "<th>Edit</th>";
+            echo "</tr>";
+        while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['username'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+        // Free result set
+        mysqli_free_result($result);
+    } else{
+        echo "No records matching your query were found.";
+    }
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+ 
+// Close connection
+mysqli_close($link);
+?>
 
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
+    
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
