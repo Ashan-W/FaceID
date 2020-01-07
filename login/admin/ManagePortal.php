@@ -23,7 +23,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                             Manage accounts
-</a>
+                        </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="ManageOfficials.php">Police & JMOs</a>
                             <a class="dropdown-item" href="ManageRUsers.php">Registered Users</a> 
