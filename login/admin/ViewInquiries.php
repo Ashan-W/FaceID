@@ -42,21 +42,21 @@
         <table class="table1 table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
         <thead>
             <tr>
-                <th style="padding:10px">Name</th>
-                <th style="padding:10px">Email Address</th>
-                <th style="padding:10px">Contact Number</th>
-                <th style="padding:10px">Message</th>
-                <th style="padding:10px"></th>
+                <th style="padding:10px; text-align:center">Name</th>
+                <th style="padding:10px; text-align:center">Email Address</th>
+                <th style="padding:10px; text-align:center">Contact Number</th>
+                <th style="padding:10px; text-align:center">Message</th>
+                <th style="padding:10px; text-align:center"></th>
             </tr>
         </thead>
 
         <?php while ($row = mysqli_fetch_array($results)) { ?>
             <tr>
-                <td style="padding:10px"><?php echo $row['fname'];?></td>
-                <td style="padding:10px"><?php echo $row['email'];?></td>
-                <td style="padding:10px"><?php echo $row['phone'];?></td>
-                <td style="padding:10px"><?php echo $row['messages'];?></td>
-                <td style="padding:10px"><button type="button" class="btn btn-secondary">Respond</button></td>
+                <td style="padding:10px; text-align:center"><?php echo $row['fname'];?></td>
+                <td style="padding:10px; text-align:center"><?php echo $row['email'];?></td>
+                <td style="padding:10px; text-align:center"><?php echo $row['phone'];?></td>
+                <td style="padding:10px; text-align:center"><?php echo $row['messages'];?></td>
+                <td style="padding:10px; text-align:center"><button type="button" class="btn btn-secondary">Respond</button></td>
             </tr>
 
         <?php } ?>
