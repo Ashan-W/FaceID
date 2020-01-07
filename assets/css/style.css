@@ -87,10 +87,7 @@ body{
     background:rgba(255,255,255,.1);
   }
   .login-form .group input[data-type="password"]{
-<<<<<<< HEAD
-=======
-    text-security:circle;
->>>>>>> a65dca921a8cb392851e4ff3b2bd8c25a4ed2907
+    /* text-security: circle; */
     -webkit-text-security:circle;
   }
   .login-form .group .label{
@@ -159,7 +156,6 @@ body{
   }
   .foot-lnk{
     text-align:center;
-<<<<<<< HEAD
   }
 
 
@@ -193,6 +189,29 @@ body{
 #mainNav{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-=======
-  }
->>>>>>> a65dca921a8cb392851e4ff3b2bd8c25a4ed2907
+
+#addIcon{
+  width: 35px;
+  height: 35px;
+  margin-top: -18%;
+}
+#class1{
+  height: 200px;
+  width: 200px;
+}
+.navigationContainer{
+  display: flex;
+  flex-direction: column;
+}
+.row1 {
+  display: flex;
+  flex: row;
+}
+.row2{
+  margin-top: 50px;
+  display: flex;
+  flex: row;
+}
+.infoportal-caption{
+  margin-left: -12%;
+}
