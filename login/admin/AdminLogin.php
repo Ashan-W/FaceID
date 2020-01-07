@@ -82,9 +82,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
+?>
+ 
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head >
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -92,12 +95,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Admin Login</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="adminlogin.css">
-
-   
-    
-    
+    <link rel="stylesheet" href="../../assets/css/style.css"> 
 
 </head>
+
+
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container"><a class="navbar-brand" href="#page-top">FaceID</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
@@ -105,31 +107,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="collapse navbar-collapse" style="position: fixed; margin-left: 250px;" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto text-uppercase">
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="../../index.html">about</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="../../index.html">Search for Missing</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="../../index.html#infoportal">information Portal</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#search">Search for Missing</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#infoportal">information Portal</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact us</a></li>
                     <li>
-                        <div class="dropdown" style="margin-left: 180px; ">
-                            <button type="button" class="btn btn-primary dropdown-toggle btn-signIN"  data-toggle="dropdown">
-                            Sign In
-                            </button>
-                            <div class="dropdown-menu" >
-                                    <a class="dropdown-item" href="./login/admin/AdminLogin.html">Admin</a>
-                                    <a class="dropdown-item" href="./login/registered_user/login.php">Registered User</a>
+                            <div class="dropdown" style="margin-left: 180px; ">
+                                <button type="button" class="btn btn-primary dropdown-toggle btn-signIN"  data-toggle="dropdown">
+                                Sign In
+                                </button>
+                                <div class="dropdown-menu" >
+                                    <a class="dropdown-item" href="./AdminLogin.html">Admin</a>
+                                    <a class="dropdown-item" href="../registered_user/Userlogin.html">Registered User</a>
                                 </div>
-                      </div>
-                    </li>
+                          </div>
+                        </li>
                 </ul>
             </div>
         </div>
     </nav>
-   <!-- <div class="page-header header-filter" style="background-image: url('../assets/img/faceid.jpg'); background-size: cover; background-position: top center;height:100vh; ">
-    
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-               
-    </div> -->
+
 
     <div class="container login-container ">
             <div class="row">
@@ -174,5 +170,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </form>
                 </div>
             </div>
+            <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/agency.js"></script>
 </body>
 </html>

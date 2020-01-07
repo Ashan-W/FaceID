@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="adminlogin.css">
     <link rel="stylesheet" href="../../assets/css/style.css"> 
 </head>
+
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container"><a class="navbar-brand" href="#page-top">FaceID</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
@@ -35,33 +36,44 @@
         </div>
     </nav>
 
-    <?php $results = mysqli_query($link, "SELECT * FROM contactform") ; ?>
+    <?php $results = mysqli_query($link, "SELECT Name,NIC,Username,Contact,Email FROM reg_users") ; ?>
     <h2 style="color:black; text-align: center; padding-top: 10%;">Registered Users</h2>
     <div class="table1" >
 
-        <table class="table1 table-dark table-striped">
+    <table class="table1 table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
         <thead>
             <tr>
-                <th>Name  </th>
-                <th>Email Address  </th>
-                <th>Contact No.  </th>
-                <th>Message</th>
+                <th style="padding:10px">Name</th>
+                <th style="padding:10px">Username</th>
+                <th style="padding:10px">NIC</th>
+                <th style="padding:10px">Contact</th>
+                <th style="padding:10px">Email</th>
+                <th style="padding:10px"></th>
+                
             </tr>
         </thead>
 
         <?php while ($row = mysqli_fetch_array($results)) { ?>
             <tr>
-                <td><?php echo $row['fname'];?></td>
-                <td><?php echo $row['email'];?></td>
-                <td><?php echo $row['phone'];?></td>
-                <td><?php echo $row['messages'];?></td>
+                <td style="padding:10px"><?php echo $row['Name'];?></td>
+                <td style="padding:10px"><?php echo $row['Username'];?></td>
+                <td style="padding:10px"><?php echo $row['NIC'];?></td>
+                <td style="padding:10px"><?php echo $row['Contact'];?></td>
+                <td style="padding:10px"><?php echo $row['Email'];?></td>
+                <td style="padding:10px"><button type="button" class="btn btn-secondary">Edit</button></td>
             </tr>
 
         <?php } ?>
     
+    
     </table>
 
     </div>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="../../assets/js/agency.js"></script>
     
 </body>
 </html>

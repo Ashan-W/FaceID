@@ -39,24 +39,24 @@
     <h2 style="color:black; text-align: center; padding-top: 10%;">Inquiries</h2>
     <div class="table1" >
 
-        <table class="table1 table-dark table-striped">
+        <table class="table1 table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Email Address</th>
-                <th>Contact Number</th>
-                <th>Message</th>
-                <th></th>
+                <th style="padding:10px">Name</th>
+                <th style="padding:10px">Email Address</th>
+                <th style="padding:10px">Contact Number</th>
+                <th style="padding:10px">Message</th>
+                <th style="padding:10px"></th>
             </tr>
         </thead>
 
         <?php while ($row = mysqli_fetch_array($results)) { ?>
             <tr>
-                <td><?php echo $row['fname'];?></td>
-                <td><?php echo $row['email'];?></td>
-                <td><?php echo $row['phone'];?></td>
-                <td><?php echo $row['messages'];?></td>
-                <td><button type="button" class="btn btn-secondary">Respond</button></td>
+                <td style="padding:10px"><?php echo $row['fname'];?></td>
+                <td style="padding:10px"><?php echo $row['email'];?></td>
+                <td style="padding:10px"><?php echo $row['phone'];?></td>
+                <td style="padding:10px"><?php echo $row['messages'];?></td>
+                <td style="padding:10px"><button type="button" class="btn btn-secondary">Respond</button></td>
             </tr>
 
         <?php } ?>
@@ -65,5 +65,9 @@
 
     </div>
     
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="../../assets/js/agency.js"></script>
 </body>
 </html>
