@@ -21,13 +21,14 @@
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#search">Manage Portal</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="ViewInquiries.php">View Inquiries</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Manage accounts
-                        </a>
-                        <div class="dropdown-menu">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                              Manage accounts
+                            </a>
+                            <div class="dropdown-menu">
                             <a class="dropdown-item" href="ManageOfficials.php">Police & JMOs</a>
-                            <a class="dropdown-item" href="ManageRUsers.php">Registered Users</a> 
-                        </div>
+                              <a class="dropdown-item" href="ManageRUsers.php">Registered Users</a>
+                              
+                            </div>
                     </li>
                 </ul>
             </div>

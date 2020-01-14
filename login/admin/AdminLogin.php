@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
+        $sql = "SELECT id, username, password FROM officials WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -151,7 +151,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6 login-form-2">
+                <!-- <div class="col-md-6 login-form-2">
                          
                         <h3> <img class="Policeimg" src="slpolice.jpg" alt="Police" align="left">Police</h3>
                    
@@ -173,7 +173,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
                         </div>
                     </form>
-                </div>
+                </div> -->
             </div>
             <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
