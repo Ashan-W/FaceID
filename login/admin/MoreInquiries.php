@@ -33,40 +33,52 @@
             </div>
         </div>
     </nav>
-
-    <form method="get" action="MoreInquiries.php">
-
-    <?php $results = mysqli_query($link, "SELECT * FROM inquiries") ; ?>
-    <h2 style="color:black; text-align: center; padding-top: 10%;">Inquiries</h2>
     
-    <div class="d-flex justify-content-center" style="padding:60px">
-        <table class="table1 table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
-        <thead>
-            <tr>
-                <th style="padding:10px; text-align:center">Name</th>
-                <th style="padding:10px; text-align:center">Email Address</th>
-                <th style="padding:10px; text-align:center">Contact Number</th>
-                <th style="padding:10px; text-align:center">Message</th>
-                <th style="padding:10px; text-align:center"></th>
-            </tr>
-        </thead>
+    <?php
+    $id = $_GET['id'];
+    echo $id;
+    $results = mysqli_query($link, "SELECT * FROM inquiries WHERE id=$id") ; 
 
+    ?>
+}
+    <h2 style="color:black; text-align: center; padding-top: 10%;">Inquiries</h2>
+    <div class="" >
+        <div class="d-flex justify-content-center" style="padding:60px">
+        
+        <table class="table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
+        
         <?php while ($row = mysqli_fetch_array($results)) { ?>
             <tr>
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><?php echo $row['name'];?></td>
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><?php echo $row['email'];?></td>
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><?php echo $row['phone'];?></td>
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center;"><?php echo substr($row['message'],0,60)."...";?></td>
-                <input type="hidden" name="id" id="id" value="<?php echo $row['id'] ?>" />
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><button class="btn btn-secondary" type="submit" name="id">View </button></td>
-                
+                <th style="padding:20px;text-align:center" width="300px">Name</th>
+                <td style="padding:10px; text-align:center"><?php echo $row['name'];?></td>
             </tr>
-S
+            <tr>
+                <th style="padding:20px;padding-left:50px;padding-right:50px; text-align:center" width="300px">Email Address</th>
+                <td style="padding:10px; text-align:center"><?php echo $row['email'];?></td>
+            </tr>
+            <tr>
+                <th style="padding:20px;padding-left:50px;padding-right:50px; text-align:center" width="300px">Contact Number</th>
+                <td style="padding:10px; text-align:center"><?php echo $row['phone'];?></td>
+            </tr>
+            <tr>
+                <th style="padding:20px;padding-left:50px;padding-right:50px; text-align:center" width="300px">Message</th>
+                <td style="padding:10px; text-align:center"><?php echo $row['message'];?></td>
+            </tr>
+            <tr> 
+                 <th style="padding:20px;padding-left:50px;padding-right:50px; text-align:center" width="300px">Images</th> 
+                <!-- <td style="padding:10px; text-align:center"><?php echo $row['picture'];?></td> -->
+             </tr> 
+
+
         <?php } ?>
     
-        </table>
-        </div>
-        </form>
+    </table>
+
+
+
+        </div>    
+        
+    </div>
     
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>

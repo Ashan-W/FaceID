@@ -36,7 +36,8 @@
         </div>
     </nav>
 
-    <?php $results = mysqli_query($link, "SELECT Name,Username,NIC,Contact,Email FROM officials WHERE type = '1'") ; ?>
+    <form method="get" action="EditProfiles.php">
+    <?php $results = mysqli_query($link, "SELECT Name,Username,NIC,Contact,Email FROM officials WHERE type = 1") ; ?>
     <h2 style="color:black; text-align: center; padding-top: 10%;">Police Official</h2>
     <div class="table1" >
 
@@ -60,7 +61,8 @@
                 <td style="padding:10px; text-align:center"><?php echo $row['NIC'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Contact'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Email'];?></td>
-                <td style="padding:10px; text-align:center"><button type="button" class="btn btn-secondary">Edit</button></td>
+                <input type="hidden" name="nic" id="nic" value="<?php echo $row['NIC'] ?>" />
+                <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" name="nic">Edit</button></td>
             </tr>
 
         <?php } ?>
@@ -69,7 +71,7 @@
 
     </div>
 
-    <?php $results = mysqli_query($link, "SELECT Name,Username,NIC,Contact,Email FROM officials WHERE type = '3'") ; ?>
+    <?php $results = mysqli_query($link, "SELECT Name,Username,NIC,Contact,Email FROM officials WHERE type = 3") ; ?>
     <h2 style="color:black; text-align: center; padding-top: 10%;">UCSC</h2>
     <div class="table1" >
 
@@ -93,7 +95,8 @@
                 <td style="padding:10px; text-align:center"><?php echo $row['NIC'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Contact'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Email'];?></td>
-                <td style="padding:10px; text-align:center"><button type="button" class="btn btn-secondary">Edit</button></td>
+                <input type="hidden" name="nic" id="nic" value="<?php echo $row['NIC'] ?>" />
+                <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" name="nic" value="NIC">Edit</button></td>
             </tr>
 
         <?php } ?>
@@ -102,7 +105,7 @@
 
     </div>
 
-    <?php $results = mysqli_query($link, "SELECT Name,Username,NIC,Contact,Email FROM officials WHERE type = '0'") ; ?>
+    <?php $results = mysqli_query($link, "SELECT Name,Username,NIC,Contact,Email FROM officials WHERE type = 0") ; ?>
     <h2 style="color:black; text-align: center; padding-top: 10%;">Judicial Medical Officers</h2>
     <div class="table1" >
 
@@ -126,13 +129,14 @@
                 <td style="padding:10px; text-align:center"><?php echo $row['NIC'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Contact'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Email'];?></td>
-                <td style="padding:10px; text-align:center"><button type="button" class="btn btn-secondary">Edit</button></td>
+                <input type="hidden" name="nic" id="nic" value="<?php echo $row['NIC'] ?>" />
+                <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" name="nic">Edit</button></td>
             </tr>
 
         <?php } ?>
     
     </table>
-
+    </form>
     </div>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>

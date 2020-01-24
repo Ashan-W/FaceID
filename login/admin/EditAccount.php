@@ -1,4 +1,32 @@
-<?php include 'config.php'; ?>
+<?php include 'config.php'; 
+
+//retrieving data for display 
+$id = $_GET['nic'];
+echo $nic;
+$name=$username=$contact=$email="";
+
+$results = mysqli_query($link, "SELECT Name,Username,Contact,Email FROM officials WHERE NIC='$nic'") ; 
+while ($row = mysqli_fetch_array($results)) {
+    $name = $row['Name'];
+    $username = $row['Username'];
+    $contact = $row['Contact'];
+    $email = $row['Email'];
+
+}
+
+//update
+
+if(isset($_POST['update'])){
+    global $name,$username,$contact,$email,$nic;
+    $name=$_POST['name'];
+    $username=$_POST['username'];
+    $contact=$_POST['contact'];
+    $email=$_POST['email'];
+
+    $results = mysqli_query($link,"UPDATE officials SET Name=$name,Username=$username,Contact=$contact,Email=$email WHERE NIC='$nic'");
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,39 +62,39 @@
         </div>
     </nav>
 
-    <form method="get" action="MoreInquiries.php">
+        <h2 style="color:black; text-align: center; padding-top: 10%;">Edit Account</h2>
+    <form method="post" action = "<?php $_PHP_SELF ?>">
+        <div class="d-flex justify-content-center" style="padding:60px">
+        
+        <table class="table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
 
-    <?php $results = mysqli_query($link, "SELECT * FROM inquiries") ; ?>
-    <h2 style="color:black; text-align: center; padding-top: 10%;">Inquiries</h2>
-    
-    <div class="d-flex justify-content-center" style="padding:60px">
-        <table class="table1 table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
-        <thead>
+            
             <tr>
-                <th style="padding:10px; text-align:center">Name</th>
-                <th style="padding:10px; text-align:center">Email Address</th>
-                <th style="padding:10px; text-align:center">Contact Number</th>
-                <th style="padding:10px; text-align:center">Message</th>
-                <th style="padding:10px; text-align:center"></th>
+                <th style="padding:20px;text-align:center" width="200px">Name</th>
+                <td style="text-align:center"  width="600px"> <input type="text"  name="name"  size="60" value="<?php echo $name?>" ></td>
             </tr>
-        </thead>
-
-        <?php while ($row = mysqli_fetch_array($results)) { ?>
             <tr>
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><?php echo $row['name'];?></td>
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><?php echo $row['email'];?></td>
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><?php echo $row['phone'];?></td>
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center;"><?php echo substr($row['message'],0,60)."...";?></td>
-                <input type="hidden" name="id" id="id" value="<?php echo $row['id'] ?>" />
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><button class="btn btn-secondary" type="submit" name="id">View </button></td>
-                
+                <th style="padding:20px; text-align:center" width="200px">Username</th>
+                <td style=" text-align:center"> <input type="text"  name="username" placeholder="Username" size="60" value='{$row1['Username']}'></td>
             </tr>
-S
-        <?php } ?>
+            <tr>
+                <th style="padding:20px; text-align:center" width="200px">Contact Number</th>
+                <td style=" text-align:center"> <input type="text"  name="contact" placeholder="Contact Number" size="60" value='{$row1['Contact']}' ></td>
+            </tr>
+            <tr>
+                <th style="padding:20px; text-align:center" width="200px">Email Address</th>
+                <td style="text-align:center"> <input type="email"  name="email" placeholder="Email Address" size="60" value='{$row1['Email']}' ></td>
+             </tr> 
+             <tr>
+                 <th></th>
+                <td style="padding:10px; text-align:center"><button type="submit" name="update" class="btn btn-secondary" value= 'update' >Update</button></td>
+            </tr>
     
-        </table>
-        </div>
+    </table>
+        </div>    
         </form>
+  
+    
     
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
