@@ -1,32 +1,45 @@
 <?php include 'config.php'; 
 
-//retrieving data for display 
-$id = $_GET['nic'];
-echo $nic;
-$name=$username=$contact=$email="";
-
-$results = mysqli_query($link, "SELECT Name,Username,Contact,Email FROM officials WHERE NIC='$nic'") ; 
-while ($row = mysqli_fetch_array($results)) {
-    $name = $row['Name'];
-    $username = $row['Username'];
-    $contact = $row['Contact'];
-    $email = $row['Email'];
-
-}
-
-//update
+$nic = $_GET['nic'];
+    $results = mysqli_query($link, "SELECT * FROM reg_users WHERE NIC='$nic'") ; 
 
 if(isset($_POST['update'])){
-    global $name,$username,$contact,$email,$nic;
-    $name=$_POST['name'];
-    $username=$_POST['username'];
-    $contact=$_POST['contact'];
-    $email=$_POST['email'];
+  $name = mysqli_real_escape_string($link,$_POST['name']);
+  $username = mysqli_real_escape_string($link,$_POST['username']);
+  $email = mysqli_real_escape_string($link,$_POST['email']);
+  $contact = mysqli_real_escape_string($link,$_POST['contact']);
 
-    $results = mysqli_query($link,"UPDATE officials SET Name=$name,Username=$username,Contact=$contact,Email=$email WHERE NIC='$nic'");
+
+
+  $sql = "UPDATE reg_users SET ";
+  if($name != NULL){
+    $sql = $sql . "Name='$name',";
+  }
+  if($username != NULL){
+    $sql = $sql . "Username= '$username',";
+  }
+  if($email != NULL){
+    $sql = $sql . "Email='$email',";
+  }
+  if($contact != NULL){
+    $sql = $sql . "Contact='$contact',";
+  }
+  
+
+
+  $sql=rtrim($sql,", ");
+  $sql = $sql . " WHERE NIC='$nic'";
+
+  if($link->query($sql) == TRUE){
+    echo "<script type='text/javascript'>alert('User updated successfully!');
+    window.location='ManageOfficials.php';
+    </script>";
+  }else{
+   $error =  "Error: " .$sql . "<br>".$link->error;
+ }
 }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,27 +76,30 @@ if(isset($_POST['update'])){
     </nav>
 
         <h2 style="color:black; text-align: center; padding-top: 10%;">Edit Account</h2>
-    <form method="post" action = "<?php $_PHP_SELF ?>">
+    <form method="post" action = "">
         <div class="d-flex justify-content-center" style="padding:60px">
         
         <table class="table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
 
-            
+        <tr>
+                <th style="padding:20px;text-align:center" width="200px">NIC</th>
+                <td style="text-align:center"  width="600px"> <?php echo $nic;?><td>
+            </tr>
             <tr>
                 <th style="padding:20px;text-align:center" width="200px">Name</th>
-                <td style="text-align:center"  width="600px"> <input type="text"  name="name"  size="60" value="<?php echo $name?>" ></td>
+                <td style="text-align:center"  width="600px"> <input type="text"  name="name"  size="60"  ></td>
             </tr>
             <tr>
                 <th style="padding:20px; text-align:center" width="200px">Username</th>
-                <td style=" text-align:center"> <input type="text"  name="username" placeholder="Username" size="60" value='{$row1['Username']}'></td>
+                <td style=" text-align:center"> <input type="text"  name="username" placeholder="Username" size="60"></td>
             </tr>
             <tr>
                 <th style="padding:20px; text-align:center" width="200px">Contact Number</th>
-                <td style=" text-align:center"> <input type="text"  name="contact" placeholder="Contact Number" size="60" value='{$row1['Contact']}' ></td>
+                <td style=" text-align:center"> <input type="text"  name="contact" placeholder="Contact Number" size="60" ></td>
             </tr>
             <tr>
                 <th style="padding:20px; text-align:center" width="200px">Email Address</th>
-                <td style="text-align:center"> <input type="email"  name="email" placeholder="Email Address" size="60" value='{$row1['Email']}' ></td>
+                <td style="text-align:center"> <input type="email"  name="email" placeholder="Email Address" size="60" ></td>
              </tr> 
              <tr>
                  <th></th>

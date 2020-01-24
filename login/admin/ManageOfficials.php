@@ -36,7 +36,7 @@
         </div>
     </nav>
 
-    <form method="get" action="EditProfiles.php">
+    
     <?php $results = mysqli_query($link, "SELECT Name,Username,NIC,Contact,Email FROM officials WHERE type = 1") ; ?>
     <h2 style="color:black; text-align: center; padding-top: 10%;">Police Official</h2>
     <div class="table1" >
@@ -55,6 +55,7 @@
         </thead>
 
         <?php while ($row = mysqli_fetch_array($results)) { ?>
+            <form method="get" action="EditProfiles.php">
             <tr>
                 <td style="padding:10px; text-align:center"><?php echo $row['Name'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Username'];?></td>
@@ -62,9 +63,9 @@
                 <td style="padding:10px; text-align:center"><?php echo $row['Contact'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Email'];?></td>
                 <input type="hidden" name="nic" id="nic" value="<?php echo $row['NIC'] ?>" />
-                <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" name="nic">Edit</button></td>
+                <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" >Edit</button></td>
             </tr>
-
+        </form>
         <?php } ?>
     
     </table>
@@ -89,16 +90,18 @@
         </thead>
 
         <?php while ($row = mysqli_fetch_array($results)) { ?>
+            <form method="get" action="EditProfiles.php">
             <tr>
+
                 <td style="padding:10px; text-align:center"><?php echo $row['Name'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Username'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['NIC'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Contact'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Email'];?></td>
                 <input type="hidden" name="nic" id="nic" value="<?php echo $row['NIC'] ?>" />
-                <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" name="nic" value="NIC">Edit</button></td>
+                <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" >Edit</button></td>
             </tr>
-
+        </form>
         <?php } ?>
     
     </table>
@@ -123,6 +126,7 @@
         </thead>
 
         <?php while ($row = mysqli_fetch_array($results)) { ?>
+            <form method="get" action="EditProfiles.php">
             <tr>
             <td style="padding:10px"><?php echo $row['Name'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Username'];?></td>
@@ -130,13 +134,12 @@
                 <td style="padding:10px; text-align:center"><?php echo $row['Contact'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Email'];?></td>
                 <input type="hidden" name="nic" id="nic" value="<?php echo $row['NIC'] ?>" />
-                <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" name="nic">Edit</button></td>
+                <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" >Edit</button></td>
             </tr>
-
+        </form>
         <?php } ?>
     
     </table>
-    </form>
     </div>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>

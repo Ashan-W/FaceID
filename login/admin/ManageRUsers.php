@@ -35,12 +35,15 @@
         </div>
     </nav>
 
+    
     <?php $results = mysqli_query($link, "SELECT Name,NIC,Username,Contact,Email FROM reg_users") ; ?>
     <h2 style="color:black; text-align: center; padding-top: 10%;">Registered Users</h2>
     <div class="table1" >
 
+
     <table class="table1 table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
         <thead>
+        
             <tr>
                 <th style="padding:10px; text-align:center">Name</th>
                 <th style="padding:10px; text-align:center">Username</th>
@@ -53,21 +56,24 @@
         </thead>
 
         <?php while ($row = mysqli_fetch_array($results)) { ?>
+            <form method="get" action="EditProfilesRUsers.php">
             <tr>
                 <td style="padding:10px; text-align:center"><?php echo $row['Name'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Username'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['NIC'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Contact'];?></td>
                 <td style="padding:10px; text-align:center"><?php echo $row['Email'];?></td>
-                <td style="padding:10px; text-align:center"><button type="button" class="btn btn-secondary">Edit</button></td>
+                <input type="hidden" name="nic" id="nic" value="<?php echo $row['NIC'] ?>" />
+                <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary">Edit</button></td>
             </tr>
-
+        </form>
         <?php } ?>
     
     
     </table>
 
     </div>
+
 
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
