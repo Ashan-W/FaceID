@@ -34,7 +34,7 @@
         </div>
     </nav>
 
-    <form method="get" action="MoreInquiries.php">
+    
 
     <?php $results = mysqli_query($link, "SELECT * FROM inquiries") ; ?>
     <h2 style="color:black; text-align: center; padding-top: 10%;">Inquiries</h2>
@@ -52,21 +52,22 @@
         </thead>
 
         <?php while ($row = mysqli_fetch_array($results)) { ?>
+            <form method="get" action="MoreInquiries.php">
             <tr>
                 <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><?php echo $row['name'];?></td>
                 <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><?php echo $row['email'];?></td>
                 <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><?php echo $row['phone'];?></td>
                 <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center;"><?php echo substr($row['message'],0,60)."...";?></td>
-                <input type="hidden" name="id" id="id" value="<?php echo $row['id'] ?>" />
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><button class="btn btn-secondary" type="submit" name="id">View </button></td>
+                <input type="hidden" name="id" id="id" value="<?php echo $row['id']; ?>" />
+                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><button class="btn btn-secondary" type="submit">View </button></td>
                 
             </tr>
-S
+            </form>
         <?php } ?>
     
         </table>
         </div>
-        </form>
+        
     
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
