@@ -1,0 +1,44 @@
+body  {
+  background-image: url("../img/1.jpg");
+  background-color: #cccccc;
+}
+<<<<<<< HEAD
+.title-container{
+  text-align: center;
+    width: 60%;
+    margin-left: 300px;
+    padding-top : 50px;
+    margin-bottom: 50px;
+  }
+  
+  .title-container p{
+    text-align: center;
+    color: white;
+    line-height: 40px;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  }
+
+
+
+=======
+
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+
+>>>>>>> a65dca921a8cb392851e4ff3b2bd8c25a4ed2907
+
