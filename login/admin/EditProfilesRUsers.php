@@ -87,7 +87,7 @@ if(isset($_POST['update'])){
             </tr>
             <tr>
                 <th style="padding:20px;text-align:center" width="200px">Name</th>
-                <td style="text-align:center"  width="600px"> <input type="text"  name="name"  size="60"  ></td>
+                <td style="text-align:center"  width="600px"> <input type="text"  placeholder="Name"name="name"  size="60"  ></td>
             </tr>
             <tr>
                 <th style="padding:20px; text-align:center" width="200px">Username</th>
