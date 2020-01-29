@@ -25,38 +25,7 @@
     </nav>
 
 
-    <div class="container">
-    <h2>Victim Identification</h2>
     
-    <form class="form-inline" style="padding-top:200px;">
-        
-
-    <div class="form-group mr-5">
-        <label for="srno">SR No</label>
-        <input type="text" class="form-control ml-3" id="srno" placeholder="SR No">
-    </div>
-    <div class="form-group mr-5">
-        <label for="date">Date</label>
-        <input type="date" class="form-control ml-3" id="date" placeholder="Date">
-    </div>
-    <div class="form-group mr-5">
-    <select class="custom-select">
-    <option selected>Select Province</option>
-    <option value="1">Central</option>
-                                <option value="2">Eastern</option>
-                                <option value="3">Northern</option>
-                                <option value="4">Southern</option>
-                                <option value="5">Western</option>
-                                <option value="6">North Western</option>
-                                <option value="7">North Central</option>
-                                <option value="8">Uva</option>
-                                <option value="9">Sabaragamuwa</option> 
-</select>
-</div>
-    <button type="submit" class="btn" id="btnsubmit1">Sign in</button>
-</form>
-        </div>
-
         <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>

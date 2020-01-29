@@ -67,3 +67,75 @@ body {
     padding-right: 20%;
     padding-left:20% ;
 }
+
+
+
+
+
+
+.card-body {
+    padding: 0;
+  }
+  .card {
+    background: #ffffff;
+    margin: 7.5px 0;
+    padding: 20px;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  .card-subtitle {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+  .card-title {
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+  }
+  .card-title h4 {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 18px;
+  }
+  .card-title p {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 12px;
+  }
+  .card-header-right-icon {
+    display: inline-block;
+    float: right;
+  }
+  .card-header-right-icon li {
+    float: right;
+    padding-left: 14px;
+    color: #868e96;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all 0.5s ease-in-out;
+    display: inline-block;
+  }
+  .card-header-right-icon li .ti-close {
+    font-size: 12px;
+  }
+  .card-option {
+    position: relative;
+  }
+  .card-option-dropdown {
+    display: none;
+    left: auto;
+    right: 0;
+  }
+  .card-option-dropdown li {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0;
+  }
+  .card-option-dropdown li a {
+    line-height: 25px;
+    font-size: 12px;
+  }
+  .card-option-dropdown li a i {
+    margin-right: 10px;
+  }

@@ -39,6 +39,7 @@
     echo $id;
     $results = mysqli_query($link, "SELECT * FROM inquiries WHERE id='$id'"); 
 
+
     ?>
 
     <h2 style="color:black; text-align: center; padding-top: 10%;">Inquiries</h2>
