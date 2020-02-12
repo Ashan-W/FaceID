@@ -19,15 +19,15 @@
             <div class="collapse navbar-collapse" style="position: fixed; margin-left: 450px;" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto text-uppercase">
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="Requests.php">View Requests</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="ModelRequests.php">3D Model Requests</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="ModelRequests.php">Models Uploaded</a></li>
                    
                 </ul>
             </div>
         </div>
     </nav>
 
-    <?php $results = mysqli_query($link, "SELECT * FROM model_requests WHERE type='0'") ; ?> //type = 0,if model is not uploaded
-    <h2 style="color:black; text-align: center; padding-top: 10%;">Requests for models</h2>
+    <?php $results = mysqli_query($link, "SELECT * FROM model_requests WHERE type='1'") ; ?> //type = 1,if model is uploaded
+    <h2 style="color:black; text-align: center; padding-top: 10%;">Models uploaded</h2>
     
     <div class="d-flex justify-content-center" style="padding:60px">
         <table class="table1 table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
@@ -51,7 +51,7 @@
                 </form>
                 <form method="get" action="ViewInfo.php">
                 <input type="hidden" name="srno" id="srno" value="<?php echo $row['srno']; ?>" />
-                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><button class="btn btn-secondary" type="submit">Upload Model </button></td>
+                <td style="padding:10px;padding-left:30px;padding-right:30px; text-align:center"><button class="btn btn-secondary" type="submit">View Model </button></td>
                 </form>
             </tr>
  
