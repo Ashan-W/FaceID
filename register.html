@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="register.css">
+    <link rel="stylesheet" href="../../assets/css/style.css"> 
+
+</head>
+
+
+<body id="page-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="../../index.html">FaceID</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" style="position: fixed; margin-left: 250px;" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto text-uppercase">
+
+                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="./manage_database.html">Registration Form</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="./inq_req.html">Add Deatails About Missing Persons</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="./request3Dmodel.html">information Portal</a></li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+<br/>
+
+    <h1>Registration Form</h1>
+        <div class="register">
+             
+            <h2>Registration Here</h2>
+
+        
+
+        <form method="POST" id="register" action="register.php">
+        <lable> Name :</lable><br>
+            <input type="text" name="name" id="name" placeholder="Enter Name"><br><br>
+
+            <lable> NIC:</lable><br>
+            <input type="text" name="nic" id="nic" placeholder="Enter NIC"><br><br>
+           
+            <lable>Username :</lable><br>
+            <input type="text" name="username" id="username" placeholder="Enter username"><br><br>
+
+            <lable>Mobile Number :</lable><br>
+            <!--<select name="ph" id="ph">
+                <option>+91</option>
+                <option>+92</option>
+                <option>+93</option>
+                <option>+94</option>
+                <option>+95</option>             
+            </select> -->
+            <input type="number" name="MNum" id="num" placeholder="Enter Mobile Number"><br><br> 
+            <lable>Email :</lable><br>
+            <input type="email" name="email" id="email" placeholder="Enter Email"><br><br>
+            <lable>Password :</lable><br>
+            <input type="password" name="password" id="password" placeholder="Enter Password"><br><br>
+            <lable>Confirm Password :</lable><br>
+            <input type="password" name="conpassword" id="conpassword" placeholder="Re-Enter Password"><br><br>
+            <button type="submit" name="submit" value="Submit">Submit</button>
+						
+         </form>
+         <br/>	
+                    
+
+
+        </div>
+    </body>
+</html>    

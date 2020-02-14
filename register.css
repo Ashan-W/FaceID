@@ -1,0 +1,113 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color:rgb(207, 203, 203);
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+}
+h1{
+    text-align: center;
+    padding: 20px;
+    color: black;
+}
+h2{
+    text-align: center;
+    padding: 20px;
+}
+.register{
+    background-color:rgb(38, 38, 43);
+    width: 550px;
+    margin: 0px 0px 0px 500px;
+    color: cornsilk;
+    font-size: 18px;
+    border-radius: 10px;
+
+}
+#register{
+    margin-left: 50px;
+}
+.download{
+    width: 100px;
+    height: 100px;
+    border-radius: 20%
+    position: absolute;
+    top: -50%
+    left: calc(50% - 50px); 
+}
+label{
+    color: cornsilk;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: italic;
+}
+#name{
+    width: 300px;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+}
+#nic{
+    width: 300px;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+}
+#username{
+    width: 300px;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+}
+
+#pn{
+    width: 300px;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+}
+#email{
+    width: 300px;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+}
+#password{
+    width: 300px;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+}
+#conpassword{
+    width: 300px;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+}
+#num{
+    width: 300px;
+    padding: 7px;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+}
+#sub{
+    width: 100px;
+    padding: 7px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+}
+
