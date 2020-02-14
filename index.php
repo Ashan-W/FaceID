@@ -14,10 +14,16 @@
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
     <script src="my_js.js"></script>
 
     <style type="text/css">
-        .search-box{
+    .mySlides{
+        display:none;
+    }
+    .search-box{
         width: 300px;
         position: relative;
         display: inline-block;
@@ -50,6 +56,10 @@
     .result p:hover{
         background: #f2f2f2;
     } 
+    .infportal{
+        
+    
+    }
     </style>
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -89,15 +99,15 @@
                 <ul class="nav navbar-nav ml-auto text-uppercase">
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">about</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#search">Search for Missing</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#infoportal">information Portal</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portal">information Portal</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact us</a></li>
                     <li class="nav-item dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle btn-signIN"  data-toggle="dropdown">
                             Sign In
                     </button>
                     <div class="dropdown-menu" >
-                        <a class="dropdown-item" href="./login/admin/AdminLogin.php">Oficials</a>
-                        <a class="dropdown-item" href="./login/registered_user/Userlogin.html">Registered User</a>
+                        <a class="dropdown-item" href="./AdminLogin.php">Oficials</a>
+                        <a class="dropdown-item" href="./Userlogin.html">Registered User</a>
                     </div>
                     </li>
                 </ul>
@@ -165,48 +175,48 @@
                     <!-- Select police area   -->
                     <select class="custom-select custom-select-sm" name="polarea" id="polarea" #ss>
                         <option selected>Select Police Area</option>
-                        <option value="1">AMPARA DIVISION</option>
-                        <option value="2">KANDY DIVISION</option>
-                        <option value="3">GAMPOLA DIVISION</option>
-                        <option value="4">MATALE DIVISION</option>
-                        <option value="5">NUWARAELIYA DIVISION</option>
-                        <option value="6">HATTON DIVISION</option>
-                        <option value="7">BATTICALOA DIVISION</option>
-                        <option value="8">TRINCOMALEE DIVISION</option>
-                        <option value="9">KANTALE DIVISION</option>
-                        <option value="10">ANURADHAPURA DIVISION</option>
-                        <option value="11">POLONNARUWA DIVISION</option>
-                        <option value="12">KANKASANTHURAI DIVISION</option>
-                        <option value="13">JAFFNA DIVISION</option>
-                        <option value="14">VAVUNIYA DIVISION</option>
-                        <option value="15">KILINOCHCHI DIVISION</option>
-                        <option value="16">MANNAR DIVISION</option>
-                        <option value="17">MULATHIVU DIVISION</option>
-                        <option value="18">KURUNAGALA DIVISION</option>
-                        <option value="19">KULIYAPITIYA DIVISION</option>
-                        <option value="20">NIKAWERATIYA DIVISION</option>
-                        <option value="21">PUTTALAM DIVISION</option>
-                        <option value="22">CHILAW DIVISION</option>
-                        <option value="23">RATNAPURA DIVISION</option>
-                        <option value="24">KAGALLE DIVISION</option>
-                        <option value="25">SEETHAWAKAPURA DIVISION</option>
-                        <option value="26">MATARA DIVISION</option>
-                        <option value="27">GALLE DIVISION</option>
-                        <option value="28">ELPITIYA DIVISION</option>
-                        <option value="29">TANGALLE DIVISION</option>
-                        <option value="30">BADULLA DIVISION</option>
-                        <option value="31">ANDARAWELA DIVISION</option>
-                        <option value="32">MONARAGALA DIVISION</option>
-                        <option value="33">COLOMBO CENTRAL DIVISION</option>
-                        <option value="34">COLOMBO NORTH DIVISION</option>
-                        <option value="35">COLOMBO SOUTH DIVISION</option>
-                        <option value="36">KELANIYA DIVISION</option>
-                        <option value="37">GAMPAHA DIVISION</option>
-                        <option value="38">NEGOMBO DIVISION</option>
-                        <option value="39">NUGEGODA DIVISION</option>
-                        <option value="40">MOUNT LAVINIA DIVISION</option>
-                        <option value="41">PANADURA DIVISION</option>
-                        <option value="42">KALUTARA DIVISION</option>
+                        <option value="Ampara Division">AMPARA DIVISION</option>
+                        <option value="Kandy Division">KANDY DIVISION</option>
+                        <option value="Gampola Division">GAMPOLA DIVISION</option>
+                        <option value="Matale Division">MATALE DIVISION</option>
+                        <option value="Nuwaraeliya Division">NUWARAELIYA DIVISION</option>
+                        <option value="Hatton Division">HATTON DIVISION</option>
+                        <option value="Batticaloa Division">BATTICALOA DIVISION</option>
+                        <option value="Trincomalee Division">TRINCOMALEE DIVISION</option>
+                        <option value="Kantale Division">KANTALE DIVISION</option>
+                        <option value="Anuradhapura Division">ANURADHAPURA DIVISION</option>
+                        <option value="Polonnaruwa Division">POLONNARUWA DIVISION</option>
+                        <option value="Kankasanthurai Division">KANKASANTHURAI DIVISION</option>
+                        <option value="Jaffa Division">JAFFNA DIVISION</option>
+                        <option value="Vavunia Division">VAVUNIYA DIVISION</option>
+                        <option value="Kilinochchi Division">KILINOCHCHI DIVISION</option>
+                        <option value="Mannar Division">MANNAR DIVISION</option>
+                        <option value="Mulathivu Division">MULATHIVU DIVISION</option>
+                        <option value="Kurunegala Division">KURUNAGALA DIVISION</option>
+                        <option value="Kuliyapitiya Division">KULIYAPITIYA DIVISION</option>
+                        <option value="Nikaweratiya Division">NIKAWERATIYA DIVISION</option>
+                        <option value="Puttalam Division">PUTTALAM DIVISION</option>
+                        <option value="Chilaw Division">CHILAW DIVISION</option>
+                        <option value="Ratnapura Division">RATNAPURA DIVISION</option>
+                        <option value="Kegalle Division">KAGALLE DIVISION</option>
+                        <option value="Seethawaka Division">SEETHAWAKAPURA DIVISION</option>
+                        <option value="Matara Division">MATARA DIVISION</option>
+                        <option value="Galle Division">GALLE DIVISION</option>
+                        <option value="Elpitiya Division">ELPITIYA DIVISION</option>
+                        <option value="Tangalle Division">TANGALLE DIVISION</option>
+                        <option value="Badulla Division">BADULLA DIVISION</option>
+                        <option value="Andrawela Division">ANDARAWELA DIVISION</option>
+                        <option value="Monaragala Division">MONARAGALA DIVISION</option>
+                        <option value="Colombo Central Division">COLOMBO CENTRAL DIVISION</option>
+                        <option value="Colombo North Division">COLOMBO NORTH DIVISION</option>
+                        <option value="Colombo South Division">COLOMBO SOUTH DIVISION</option>
+                        <option value="Kelaniya Division">KELANIYA DIVISION</option>
+                        <option value="Gampaha Division">GAMPAHA DIVISION</option>
+                        <option value="Negombo Division">NEGOMBO DIVISION</option>
+                        <option value="Nugegoda Division">NUGEGODA DIVISION</option>
+                        <option value="Mount Lavinia Division">MOUNT LAVINIA DIVISION</option>
+                        <option value="Panadura Division">PANADURA DIVISION</option>
+                        <option value="Kaluthara Division">KALUTARA DIVISION</option>
                     </select> 
                     <br>
                     <br>
@@ -221,12 +231,10 @@
                     </br>
 
                       <!-- <form action="/action_page.php" > -->
-                        Missing Dates From: <input type="date" name="bday" style="border-radius: 20px;">
-                        To: <input type="date" name="bday" style="border-radius: 20px;">
-                        <input type="submit" >
+                        Missing Date : <input type="date" id="fday" name="fday" style="border-radius: 20px;">
                       <br>
                       <br>
-                      <button type="submit" name="submit" class="btn btn-outline-primary" ><h3>Search</h3></button>
+                      <button type="submit" name="submit" class="btn btn-outline-primary" formaction="./searchresult.php" ><h3>Search</h3> </button>
                     </form>
                 </div>
             </div>
@@ -235,13 +243,15 @@
                 if(isset($_POST['submit'])){
 
                     $con = mysqli_connect("localhost","root","","faceid");
-                    $key = $_POST['dist'];
+                    $key = $_POST['dist'] ;
+                    $key2 = $_POST['polarea'] ;
+                    $key3 = $_POST['fday'] ;
 
                     if (!$con){
                         die('Could not connect: ' . mysqli_error());
                     }      
                 
-                    $sql="SELECT * FROM unidentifiedbodies WHERE district = '$key' ";
+                    $sql="SELECT * FROM unidentifiedbodies WHERE policearea = '$key2' ";
 
                     // echo $sql;
                 
@@ -257,6 +267,7 @@
                         <!-- <div> -->
                         <p><img src="./assets/img/faceid.jpg" width="250px" height="150px" alt="sometext" hspace="15"/></p>
                         <?php
+                        echo "img src=".$dna."/"." width=100 height=100";
                         echo $row['date'];
                         echo $row['policearea'];
                         echo $row['province'];
@@ -329,7 +340,7 @@
             <!-- <p align="center"><button type="button" class="btn btn-outline-primary"><h5>View More Data</h5></button></p> -->
         </div>
     </section>
-    <section id="infoportal" class="bg-light" style="background-color: #f5f5f5;">
+    <!-- <section id="infoportal" class="bg-light" style="background-color: #f5f5f5;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -400,18 +411,50 @@
                 </div>
             </div>
         </div>
-    </section> 
-    <section id="portal" style="background-color: #f5f5f5 ;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase">Portal</h2>
-                    <h3 class="text-muted section-subheading">&nbsp;View the Database</h3>
+    </section>  -->
+    
+    <section id="portal" style="background-color: white">
+    <div class="infportal">
+        <h2 class="w3-center">Information Portal</h2>
+
+        <div class="w3-content w3-section" style="max-width:800px">
+            <div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
+                <p><span class="w3-tag w3-yellow">New!</span>
+                <p>6 Crystal Glasses</p>
+                <p>Only $99 !!!</p>
+            </div>  
+            <div class="w3-display-container mySlides">
+                <img src="./assets/img/nature2.jpg" style="width:100%">
+                <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                    Northern Lights
                 </div>
             </div>
+            <<div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
+                <p><span class="w3-tag w3-yellow">Neww!</span>
+                <p>New dead body found..!!</p>
+                <p>Location Matara !!!</p>
+            </div>  
         </div>
+
+        <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 3000); // Change image every 2 seconds
+            }
+        </script>
+    </div>
     </section>
-    
+        
     
     <section id="contact" style="background-image:url('assets/img/map-image.png');">
         <div class="container">
@@ -429,13 +472,17 @@
                                 <div class="form-group"><input class="form-control" type="text" required="" name="fname" placeholder="Your Name *"><small class="form-text text-danger flex-grow-1 help-block lead"></small></div>
                                 <div class="form-group"><input class="form-control" type="email" required="" name="email" placeholder="Your Email *"><small class="form-text text-danger help-block lead"></small></div>
                                 <div class="form-group"><input class="form-control" type="tel" required="" name="phone" placeholder="Your Phone *"><small class="form-text text-danger help-block lead"></small></div>
+                                
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group"><textarea class="form-control" required="" name="message" placeholder="Your Message *"></textarea><small class="form-text text-danger help-block lead"></small></div>
                             </div>
-                            <div class="col">
-                                <div class="clearfix"></div>
+                            <div class="col-md-6">
+                                <div calss="form-group"><input class="form-control" type="file" name="cimage" placeholder="Upload Image *" accept="image/*"><small class="form-text text-danger help-block lead"></small></div>
                             </div>
+                            <!-- <div class="col">
+                                <div class="clearfix"></div>
+                            </div> -->
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div><button class="btn btn-primary btn-xl text-uppercase" type="submit" id="sendMessageButton">Send Message</button></div>
                         </div>
