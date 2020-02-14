@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="my_js.js"></script>
 
     <style type="text/css">
         .search-box{
@@ -74,6 +75,7 @@
             $(this).parent(".result").empty();
         });
     });
+    
     </script>
 
 
@@ -90,15 +92,14 @@
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#infoportal">information Portal</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact us</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                          Sign in 
-                        </a>
-                        <div class="dropdown-menu">
-                        <a class="dropdown-item" href="./login/admin/AdminLogin.php">Officials</a>
-                          <a class="dropdown-item" href="./login/registered_user/UserLogin.html">Registered Users</a>
-                          
-                        </div>
-                      </li>
+                    <button type="button" class="btn btn-primary dropdown-toggle btn-signIN"  data-toggle="dropdown">
+                            Sign In
+                    </button>
+                    <div class="dropdown-menu" >
+                        <a class="dropdown-item" href="./login/admin/AdminLogin.php">Oficials</a>
+                        <a class="dropdown-item" href="./login/registered_user/Userlogin.html">Registered User</a>
+                    </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -123,44 +124,46 @@
             
         </div>
     </section>
-    <section id="search">
+    <section id="search" style="background-color: white;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="text-uppercase section-heading" style="color: white;">Search</h2>
+                    <form action="" method="post">
+                    <h2 class="text-uppercase section-heading">Search</h2>
                     <h3 class="text-muted section-subheading">Search Here</h3>
-                    <select class="browser-default custom-select custom-select-lg mb-3">
-                        <option selected>Select District</option>
-                        <option value="1">Ampara</option>
-                        <option value="2">Anuradhapura</option>
-                        <option value="3">Badulla</option>
-                        <option value="4">Batticaloa</option>
-                        <option value="5">Colombo</option>
-                        <option value="6">Galle</option>
-                        <option value="7">Gampaha</option>
-                        <option value="8">Hambantota</option>
-                        <option value="9">Jaffna</option>
-                        <option value="10">Kalutara</option>
-                        <option value="11">Kandy</option>
-                        <option value="12">Kegalle</option>
-                        <option value="13">Kilinochchi</option>
-                        <option value="14">Kurunegala</option>
-                        <option value="15">Mannar</option>
-                        <option value="16">Matale</option>
-                        <option value="17">Matara</option>
-                        <option value="18">Monaragala</option>
-                        <option value="19">Mullaitivu</option>
-                        <option value="20">Nuwara Eliya</option>
-                        <option value="21">Polonnaruwa</option>
-                        <option value="22">Puttalam</option>
-                        <option value="23">Ratnapura</option>
-                        <option value="24">Trincomalee</option>
-                        <option value="25">Vavuniya</option>
-                      </select>
-                      
-                      <select class="custom-select custom-select-sm">
-                        
 
+                    <!-- Select district -->
+                    <select class="browser-default custom-select custom-select-lg mb-3" name="dist" id="dist" #ss>
+                        <option selected>Select District</option>
+                        <option value="Ampara">Ampara</option>
+                        <option value="Anuradhapura">Anuradhapura</option>
+                        <option value="Badulla">Badulla</option>
+                        <option value="Batticaloa">Batticaloa</option>
+                        <option value="Colombo">Colombo</option>
+                        <option value="Galle">Galle</option>
+                        <option value="Gampaha">Gampaha</option>
+                        <option value="Hambantota">Hambantota</option>
+                        <option value="Jaffna">Jaffna</option>
+                        <option value="Kalutara">Kalutara</option>
+                        <option value="Kandy">Kandy</option>
+                        <option value="Kegalle">Kegalle</option>
+                        <option value="Kilinochchi">Kilinochchi</option>
+                        <option value="Kurunegala">Kurunegala</option>
+                        <option value="Mannar">Mannar</option>
+                        <option value="Matale">Matale</option>
+                        <option value="Matara">Matara</option>
+                        <option value="Monaragala">Monaragala</option>
+                        <option value="Mullaitivu">Mullaitivu</option>
+                        <option value="Nuwara Eliya">Nuwara Eliya</option>
+                        <option value="Polonnaruwa">Polonnaruwa</option>
+                        <option value="Puttalam">Puttalam</option>
+                        <option value="Ratnapura">Ratnapura</option>
+                        <option value="Trincomalee">Trincomalee</option>
+                        <option value="Vavuniya">Vavuniya</option>
+                    </select>
+
+                    <!-- Select police area   -->
+                    <select class="custom-select custom-select-sm" name="polarea" id="polarea" #ss>
                         <option selected>Select Police Area</option>
                         <option value="1">AMPARA DIVISION</option>
                         <option value="2">KANDY DIVISION</option>
@@ -204,27 +207,76 @@
                         <option value="40">MOUNT LAVINIA DIVISION</option>
                         <option value="41">PANADURA DIVISION</option>
                         <option value="42">KALUTARA DIVISION</option>
-                      </select> 
-                      </br>
-                      </br>
-                      <div class="search-box">
+                    </select> 
+                    <br>
+                    <br>
+
+                    <!-- Seach from the police areas that included in the Database -->
+                    <div class="search-box">
                         <input type="text" autocomplete="off" placeholder="Search Police Area..." />
                         <div class="result"></div>
-                      </div>
-                      <br>
-                      <br>
+                    </div>
+
+                    </br>
+                    </br>
+
                       <!-- <form action="/action_page.php" > -->
                         Missing Dates From: <input type="date" name="bday" style="border-radius: 20px;">
                         To: <input type="date" name="bday" style="border-radius: 20px;">
                         <input type="submit" >
                       <br>
                       <br>
-                      <button type="button" class="btn btn-outline-primary"><h3>Search</h3></button>
+                      <button type="submit" name="submit" class="btn btn-outline-primary" ><h3>Search</h3></button>
+                    </form>
                 </div>
             </div>
+            
+            <?php
+                if(isset($_POST['submit'])){
+
+                    $con = mysqli_connect("localhost","root","","faceid");
+                    $key = $_POST['dist'];
+
+                    if (!$con){
+                        die('Could not connect: ' . mysqli_error());
+                    }      
+                
+                    $sql="SELECT * FROM unidentifiedbodies WHERE district = '$key' ";
+
+                    // echo $sql;
+                
+                    $result = mysqli_query($con,$sql);
+                    
+                    if (!$result) {
+                        die('Error: ' . mysqli_error($con));
+                    }?>
+
+                    <!-- <div class="row"> -->
+                    <?php
+                    While ($row = mysqli_fetch_assoc($result)){ ?>
+                        <!-- <div> -->
+                        <p><img src="./assets/img/faceid.jpg" width="250px" height="150px" alt="sometext" hspace="15"/></p>
+                        <?php
+                        echo $row['date'];
+                        echo $row['policearea'];
+                        echo $row['province'];
+                        echo $row['district'];
+                        echo "</br>";?>
+                        <!-- </div> -->
+                        <?php
+
+                    }?>
+
+                    <!-- </div> -->
+                                  
+                <?php    
+                }
+
+            ?>
+            
             <br>
             <br>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="img-with-text">
                     <p><img src="./assets/img/faceid.jpg" width="250px" height="150px" alt="sometext" hspace="15"/></p>
                     <p align="center">Data 1</p>
@@ -273,8 +325,8 @@
                     <p align="center">District</p>
                     <p align="center"><a href="view.html">Click here for more details</a></p>
                 </div> 
-            </div>
-            <p align="center"><button type="button" class="btn btn-outline-primary"><h5>View More Data</h5></button></p>
+            </div> -->
+            <!-- <p align="center"><button type="button" class="btn btn-outline-primary"><h5>View More Data</h5></button></p> -->
         </div>
     </section>
     <section id="infoportal" class="bg-light" style="background-color: #f5f5f5;">
