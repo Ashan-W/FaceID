@@ -1,0 +1,22 @@
+.table1{
+    padding-top:2%;
+    padding-left: 5%;
+    padding-right: 15%;
+    padding-bottom: 10%;
+    
+}
+
+#container {
+    border-radius: 5px;
+    padding-top: 1000px;
+}
+
+#btnsubmit1{
+    background-color: rgb(32, 32, 34);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+}
