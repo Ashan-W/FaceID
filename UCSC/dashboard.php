@@ -15,6 +15,16 @@ if (!isUCSCLoggedIn()){
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="ucsc.css">
 	<link rel="stylesheet" href="../assets/css/style.css"> 
+
+    <style>
+        .card-columns{
+            padding-top: 150px;
+            padding-left: 300px;
+            padding-right: 100px;  
+        }.card-text{
+            color: black;
+        }
+    </style>
 </head>
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
@@ -32,6 +42,35 @@ if (!isUCSCLoggedIn()){
     </nav>
 
     <?php $results = mysqli_query($link, "SELECT * FROM model_requests WHERE type='1'") ; ?> //type = 1,if model is uploaded
+    
+    <?php
+        //Number of Requests
+        $sql ="SELECT COUNT(id) FROM model_requests WHERE type='0'";
+        $results1 = $link->query($sql);
+        $requests = $results1->fetch_assoc()['COUNT(id)'];
+
+        //Number of Requests
+        $sql ="SELECT COUNT(id) FROM model_requests WHERE type='1'";
+        $results2 = $link->query($sql);
+        $uploaded = $results2->fetch_assoc()['COUNT(id)'];
+    ?>
+
+    <div class="card-columns">
+        <div class="card bg-secondary">
+            <div class="card-body text-center">
+                <p class="card-text">Number of Requests</p>
+                <p class="card-text"><?php echo $requests;?> </p>
+            </div>
+        </div>
+
+        <div class="card bg-secondary">
+            <div class="card-body text-center">
+                <p class="card-text">Number of uploads</p>
+                <p class="card-text"><?php echo $uploaded;?> </p>
+            </div>
+        </div>
+    </div>   
+
     
         
     

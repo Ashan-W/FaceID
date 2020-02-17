@@ -3,7 +3,18 @@ include '../Admin/AdminFunc.php';
 if (!isUCSCLoggedIn()){
     $_SESSION['msg'] = "You must Log in First";
     header('location:../AdminLogin.php');
-}?>
+
+}
+if (isset($_POST['SUBMIT']){
+    $name = $_FILES['file'] ['name'];
+    $temp = $_FILES['file'] ['tmp_name'];
+
+    move_uploaded_file($temp,"uploaded/".$name);
+    
+
+})
+
+?>
 
 
 <!DOCTYPE html>
@@ -16,6 +27,12 @@ if (!isUCSCLoggedIn()){
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="ucsc.css">
     <link rel="stylesheet" href="../assets/css/style.css"> 
+
+    <style>
+        .form1{
+            padding-top: 200px;
+        }
+    </style>
 </head>
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
@@ -32,7 +49,12 @@ if (!isUCSCLoggedIn()){
         </div>
     </nav>
 
-  
+    <div class= "form1">
+    <form action="ModelsUploaded.php" method="post" enctype="multipart/form-da">
+        <input type="file" name="file" />
+        <input type="submit" name="submit" value="upload" />
+    </form>
+    </div>
         
     
     <script src="../../assets/js/jquery.min.js"></script>
