@@ -103,7 +103,7 @@ if (!isAdminLoggedIn()) {
                             <div class="input-group-prepend">
                                 <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                             </div>
-                            <input name="contact" class="form-control" placeholder="Phone number" type="tel" pattern="[0-9v]{10}" required>
+                            <input name="contact" class="form-control" placeholder="Phone number" type="tel" pattern="[0-9]{10}" required>
                         </div>
 
                         <!-- NIC -->

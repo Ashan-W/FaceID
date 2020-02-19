@@ -33,8 +33,8 @@
                           Sign in 
                         </a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="../Admin/AdminLogin.php">Officials</a>
-                          <a class="dropdown-item" href="./UserLogin.html">Registered Users</a>
+                        <a class="dropdown-item" href="AdminLogin.php">Officials</a>
+                          <a class="dropdown-item" href="./UserLogin.php">Registered Users</a>
                           
                         </div>
                       </li>
@@ -82,7 +82,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                 </div>
-                <input name="contact" class="form-control" placeholder="Phone number" type="text" required>
+                <input name="contact" class="form-control" placeholder="Phone number" type="tel" pattern="[0-9]{10}" required>
             </div> 
             
             <!-- NIC -->
@@ -91,7 +91,7 @@
                     <span class="input-group-text"> <i class="fa fa-id-badge"></i> </span>
                 </div>
                 <?php echo $nic_err;?></span>
-                <input name="nic" class="form-control" placeholder="National Identity Card" type="text" required>
+                <input name="nic" class="form-control" placeholder="National Identity Card" pattern="[0-9v]{10}" type="text" required>
                 <span class="error">
                 
             </div> 
