@@ -15,7 +15,27 @@ if (!isJMOLoggedIn()){
     <title>View Records</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="jmologin.css">
-    <link rel="stylesheet" href="../../assets/css/style.css"> 
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <style>
+        h2 {
+            color: black;
+            text-align: center;
+            padding-top: 10%;
+            padding-bottom: 20px;
+        }
+
+        .table1 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body id="page-top">
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
@@ -40,7 +60,7 @@ if (!isJMOLoggedIn()){
     ?>
 
 
-    <h2 style="color:black; text-align: center; padding-top: 10%;">Unidentified bodies</h2>
+    <h2 >Unidentified bodies</h2>
     <div class="d-flex justify-content-center" style="padding:60px">
 
     <table class="table1 table-dark table-striped" style="border:1px solid black; margin-left:auto; margin-right:auto; width: 70%">
@@ -55,62 +75,62 @@ if (!isJMOLoggedIn()){
     ?>
 
     <tr>
-        <th style="padding:20px; text-align:center">SR No</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['srno'];?></td>
+        <th >SR No</th>
+        <td><?php echo $row['srno'];?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Date</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['date'];?></td>
+        <th >Date</th>
+        <td><?php echo $row['date'];?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Province</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['province'];?></td>
+        <th >Province</th>
+        <td><?php echo $row['province'];?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">District</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['district'];?></td>
+        <th >District</th>
+        <td><?php echo $row['district'];?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Police Area</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['policearea'];?></td>
+        <th >Police Area</th>
+        <td><?php echo $row['policearea'];?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">DNA</th>
-        <td style="padding:10px; text-align:center"><?php echo "<img src ='data:image/jpg;base64,".base64_encode($dna)."'alt = ''/ width=300px height=300px>"; ?></td>
+        <th >DNA</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($dna)."'alt = ''/ width=300px height=300px>"; ?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Fingerprint</th>
-        <td style="padding:10px; text-align:center"><?php echo "<img src ='data:image/jpg;base64,".base64_encode($fingerprint)."'alt = ''/ width=300px height=300px>"; ?></td>
+        <th >Fingerprint</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($fingerprint)."'alt = ''/ width=300px height=300px>"; ?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Dental</th>
-        <td style="padding:10px; text-align:center"><?php echo "<img src ='data:image/jpg;base64,".base64_encode($dental)."'alt = ''/ width=300px height=300px>"; ?></td> 
+        <th >Dental</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($dental)."'alt = ''/ width=300px height=300px>"; ?></td> 
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Facial Photograpgh</th>
-        <td style="padding:10px; text-align:center"><?php echo "<img src ='data:image/jpg;base64,".base64_encode($face)."'alt = ''/ width=300px height=300px>"; ?></td>
+        <th >Facial Photograpgh</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($face)."'alt = ''/ width=300px height=300px>"; ?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Clothes</th>
-        <td style="padding:10px; text-align:center"><?php echo "<img src ='data:image/jpg;base64,".base64_encode($clothes)."'alt = ''/ width=300px height=300px>"; ?></td>
+        <th >Clothes</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($clothes)."'alt = ''/ width=300px height=300px>"; ?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Ornaments</th>
-        <td style="padding:10px; text-align:center"><?php echo "<img src ='data:image/jpg;base64,".base64_encode($ornaments)."'alt = ''/ width=300px height=300px>"; ?></td>
+        <th >Ornaments</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($ornaments)."'alt = ''/ width=300px height=300px>"; ?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Tattoos</th>
-        <td style="padding:10px; text-align:center"><?php echo "<img src ='data:image/jpg;base64,".base64_encode($tattoos)."'alt = ''/ width=300px height=300px>"; ?></td> 
+        <th >Tattoos</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($tattoos)."'alt = ''/ width=300px height=300px>"; ?></td> 
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Special Remarks</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['specialremarks'];?></td> 
+        <th >Special Remarks</th>
+        <td><?php echo $row['specialremarks'];?></td> 
     </tr>
     <form method="post" action="EditRecord.php">
     <tr>
-        <th style="padding:20px; text-align:center"></th>
+        <th ></th>
         <input type="hidden" name="srno" id="srno" value="<?php echo $row['srno']; ?>" />
-        <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" >Edit Details</button></td>
+        <td><button type="submit" class="btn btn-secondary" >Edit Details</button></td>
     </tr>
     </form>
     
