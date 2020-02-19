@@ -49,9 +49,8 @@
 
     <div class="container login-container ">
             <div class="row">
-                <div class="col-md-6 login-form">
-                        
-                    <h3>Officials</h3>
+                <div class="col-md-6 login-form">    
+                    <h3 style="color:black">Officials</h3>
                     <form action="AdminLogin.php" method="post">
                        
                         <div class="form-group input-group">

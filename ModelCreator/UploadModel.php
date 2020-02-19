@@ -5,7 +5,7 @@ if (!isUCSCLoggedIn()){
     header('location:../AdminLogin.php');
 
 }
-if (isset($_POST['SUBMIT']){
+if (isset($_POST['SUBMIT'])){
     $name = $_FILES['file'] ['name'];
     $temp = $_FILES['file'] ['tmp_name'];
 

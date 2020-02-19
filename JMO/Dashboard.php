@@ -16,6 +16,17 @@ if (!isJMOLoggedIn()){
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="jmologin.css">
     <link rel="stylesheet" href="../assets/css/style.css"> 
+
+    <style>
+        .card-columns{
+            padding-top: 150px;
+            padding-left: 500px;
+            padding-right: 100px;
+              
+        }.card-text{
+            color: black;
+        }
+    </style>
 </head>
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
@@ -33,6 +44,24 @@ if (!isJMOLoggedIn()){
     </nav>
 
     
+    
+    
+    <?php
+
+        $nic =  $_SESSION['nic'];
+        //Number of Records uploaded
+        $sql ="SELECT COUNT(srno) FROM unidentifiedbodies WHERE jmo='$nic' ";
+        $results1 = $link->query($sql);
+        $records = $results1->fetch_assoc()['COUNT(srno)'];
+    ?>
+
+    <div class="card-columns">
+        <div class="card bg-secondary">
+            <div class="card-body text-center">
+                <p class="card-text">Number of records submitted</p>
+                <p class="card-text"><?php echo $records;?> </p>
+            </div>
+        </div>
 
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>

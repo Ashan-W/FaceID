@@ -13,7 +13,7 @@ if (!isUCSCLoggedIn()){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
     <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="ucsc.css">
+    <link rel="stylesheet" type="text/css" href="modelC.css">
 	<link rel="stylesheet" href="../assets/css/style.css"> 
 
     <style>

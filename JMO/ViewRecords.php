@@ -43,7 +43,8 @@ if (!isJMOLoggedIn()){
 
 
     <h2 style="color:black; text-align: center; padding-top: 10%;">Unidentified bodies</h2>
-    <div class="table1" >
+
+    <div class="d-flex justify-content-center" style="padding:60px">
 
     <table class="table1 table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
         <thead>

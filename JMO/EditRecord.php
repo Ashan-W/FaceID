@@ -1,6 +1,6 @@
 <?php 
 include '../Admin/AdminFunc.php';
-include 'jmoFunc.php';
+//include 'jmoFunc.php';
 
 if (!isJMOLoggedIn()){
     $_SESSION['msg'] = "You must Log in First";
@@ -21,11 +21,12 @@ if (!isJMOLoggedIn()){
     
 </head>
 <body id="page-top">
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container"><a class="navbar-brand" href="#page-top">FaceID</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" style="position: fixed; margin-left: 450px;" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto text-uppercase">
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="Dashboard.php">Dashboard</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="ViewRecords.php">View Records</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="AddDetails.php">Add Details</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="../Admin/AdminFunc.php?logout='1'">Logout</a></li>
@@ -36,14 +37,14 @@ if (!isJMOLoggedIn()){
 
     <?php
     $srno = $_POST['srno'];
-    echo $id;
+    echo $srno;
     $results = mysqli_query($link, "SELECT * FROM unidentifiedbodies  WHERE srno='$srno'"); 
 
     ?>
 
 
     <h2 style="color:black; text-align: center; padding-top: 10%;">Unidentified bodies</h2>
-    <div class="table1" >
+    <div class="d-flex justify-content-center" style="padding:60px">
 
     <table class="table1 table-dark table-striped" style="border:1px solid black; margin-left:auto; margin-right:auto; width: 70%">
     <?php while ($row = mysqli_fetch_array($results)) { ?>
@@ -103,7 +104,7 @@ if (!isJMOLoggedIn()){
     <form method="get" action="EditRecord.php">
     <tr>
         <th style="padding:20px; text-align:center"></th>
-        <td style="padding:10px; text-align:center"><button type="submit" name="editrecord_btn" class="btn btn-secondary" >Edit Details</button></td>
+        <td style="padding:10px; text-align:center"><button type="submit" name="editrecord_btn" class="btn btn-secondary" >Update</button></td>
     </tr>
     </form>
     

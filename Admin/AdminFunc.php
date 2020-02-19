@@ -58,6 +58,9 @@
     //Add new article
     if (isset($_POST['AddArti'])){
         AddArti();
+    }//Add unidentified body details
+    if (isset($_POST['adddet'])){
+    AddDetails();
     }
    
 
@@ -91,7 +94,7 @@
                 $_SESSION['nic'] = $nic;
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "You are now logged in";
-                header('location:UCSC/dashboard.php');
+                header('location:ModelCreator/dashboard.php');
             }else{
                 $_SESSION['type'] = "Admin";
                 $_SESSION['nic'] = $nic;
@@ -101,7 +104,7 @@
             }
             
         }else{
-            $pass_err = "Wrong username/password combination.";
+            echo "<script> alert('Wrong username/password combination.');</script>";
         }
         $link->close();
     }
@@ -122,7 +125,7 @@
 
         //Checking if the passwords match
         if($password != $confirm_password){
-            $pass_err = "The two passwords entered do not match";
+            echo "<script> alert('The two passwords do not match!');</script>";
             $err = $err +1;
         }
 
@@ -131,7 +134,7 @@
             $sql = "SELECT * FROM officials WHERE nic ='$nic'LIMIT 1";
             $results = $link->query($sql);
             if($results->num_rows == 1){
-                $nic_err = "An account for the NIC already exists";
+                echo "<script> alert('An account for the NIC already exists!');</script>";
                 $err = $err +1;
             }
         }
@@ -161,17 +164,17 @@ function UpdateAcc(){
 
     //Taking inputs from the user
     $username = $_POST['username'];
-    $name = $_POST['name'];
     $email = $_POST['email'];
     $contact = $_POST['contact'];
     $nic = $_POST['nic'];
 
-    $sql="UPDATE officials SET Name='$name', Username='$username' , Contact='$contact' , Email='$email' WHERE NIC='$nic'";
+    $sql="UPDATE officials SET  Username='$username' , Contact='$contact' , Email='$email' WHERE NIC='$nic'";
 
         if($link->query($sql) === TRUE){
             header('location:ManageOfficials.php');
             echo " Account updated successfully!";
         }else{
+
             echo "Error: " . $sql . "<br>" .$link->error;
         }
     $link->close();
@@ -227,6 +230,43 @@ function AddArti(){
         if($link->query($sql) === TRUE){
             header('location:ManagePortal.php');
             echo " Aricle added successfully!";
+        }else{
+            echo "Error: " . $sql . "<br>" .$link->error;
+        }
+    $link->close();
+}
+//----------------Add details about unidentified bodies--------------
+function AddDetails(){
+    global $link, $srno , $date , $province, $policearea , $nic;
+
+    $nic = $_SESSION['nic'];
+
+    $srno = $_POST['srno'];
+    $date = $_POST['date'];
+    $province = $_POST['province'];
+    $policearea = $_POST['policearea'];
+    $district = $_POST['district'];
+    $dna = $_POST['dna'];
+    $est_age = $_POST['est_ge'];
+    $height = $_POST['height'];
+    $weight = $_POST['weight'];
+    $fingerprint = $_POST['fingerprint'];
+    $dental = $_POST['dental'];
+    $facial = $_POST['facial'];
+    $clothes = $_POST['clothes'];
+    $ornaments = $_POST['ornaments'];
+    $tattoos = $_POST['tattoos'];
+    $specialremarks = $_POST['specialremarks'];
+
+
+
+    $sql= "INSERT INTO unidentifiedbodies (srno , date , province , policearea , district , dna , est_age , height , weight , fingerprint , facialphotograph , clothes , ornaments , tattoos , specialremarks , jmo) 
+                    VALUES ('$srno' , '$date' , '$province' , '$policearea' , '$district' , '$dna', '$est_age' , '$height' , '$weight' , '$fingerprint' , '$facial' ,'$clothes' , '$ornaments' , '$tattoos' ,'$specialremarks' , '$nic') ";
+
+
+        if($link->query($sql) === TRUE){
+            header('location:ViewRecords.php');
+            echo " Details added successfully!";
         }else{
             echo "Error: " . $sql . "<br>" .$link->error;
         }

@@ -18,6 +18,21 @@ if (!isAdminLoggedIn()){
     <link rel="stylesheet" href="../assets/css/style.css"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
+    <style>
+    h2{
+        color:black; 
+        text-align: center; 
+        padding-top: 10%;
+        padding-bottom:10px;
+    }.table1{
+        border:1px solid black;
+
+    }th , td{
+        padding:20px; 
+        text-align:center;
+    }
+    </style>
+
 </head>
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
@@ -42,23 +57,30 @@ if (!isAdminLoggedIn()){
         </div>
     </nav>
 
-    <h2 style="color:black; text-align: center; padding-top: 10%;">Add new Article</h2>
+    <h2>Add new Article</h2>
 
     <form method="post" action = "ManagePortal.php">
-        <div class="d-flex justify-content-center form-group" style="padding:60px">
-            <table class="table-dark table-striped" style="border:1px solid black;margin-left:auto;margin-right:auto;">
+        <div class="d-flex justify-content-center form-group">
+            <table class=" table1 table-dark table-striped">
                 <tr>
-                    <th style="padding:20px;text-align:center" width="200px">Article</th>
-                    <td style="text-align:center"  width="600px"> <input type="text" class="rounded"  style="width:95%;border:none;border:1px solid white;background-color:transparent;color:white;" name="article" size="500"></td>
+                    <th width="200px">Article</th>
+                    <td width="600px"> 
+                        <textarea cols="10" rows="10" class="rounded"  style="width:95%;border:none;border:1px solid white;background-color:transparent;color:white;" name="article" size="500"></textarea>
+                    </td>
                 </tr>
                 <tr>
-                    <th style="padding:20px;text-align:center" width="200px"></th>
-                    <td style="text-align:center"  width="600px"> <button class="btn btn-secondary" name="AddArti" formmethod="post" type="submit">Submit</td>
+                    <th  width="200px"></th>
+                    <td  width="600px"> <button onclick="Add()" class="btn btn-secondary" name="AddArti" formmethod="post" type="submit">Submit</td>
                 </tr>
             </table>
         </div>    
     </form>
     
+    <script>
+    function Add() {
+        alert("New article added");
+    }
+    </script>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
