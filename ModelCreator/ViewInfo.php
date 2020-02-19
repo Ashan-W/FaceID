@@ -15,6 +15,26 @@ if (!isUCSCLoggedIn()){
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="ucsc.css">
     <link rel="stylesheet" href="../assets/css/style.css"> 
+
+    <style>
+        h2 {
+            color: black;
+            text-align: center;
+            padding-top: 10%;
+            padding-bottom: 20px;
+        }
+
+        .table1 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body id="page-top">
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
@@ -24,83 +44,89 @@ if (!isUCSCLoggedIn()){
                 <ul class="nav navbar-nav ml-auto text-uppercase">
                 <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="dashboard.php">Dashboard</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="Requests.php">View Requests</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="ModelsUploaded.php">3D Model Requests</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="ModelSUploaded.php">3D Models Uploaded</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="../Admin/AdminFunc.php?logout='1'">Logout</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    
     <?php
     $srno = $_POST['srno'];
+    echo $id;
     $results = mysqli_query($link, "SELECT * FROM unidentifiedbodies  WHERE srno='$srno'"); 
+    
 
     ?>
-
-
-    <h2 style="color:black; text-align: center; padding-top: 10%;">Unidentified bodies</h2>
-    <div class="table1" >
+    <div class="d-flex justify-content-center" style="padding:60px">
 
     <table class="table1 table-dark table-striped" style="border:1px solid black; margin-left:auto; margin-right:auto; width: 70%">
-    <?php while ($row = mysqli_fetch_array($results)) { ?>
+    <?php while ($row = mysqli_fetch_array($results)) { 
+        $dna = $row['dna'];
+    $fingerprint = $row['fingerprint'];
+    $dental = $row['dental'];
+    $face = $row['facialphotograph'];
+    $clothes = $row['clothes'];
+    $ornaments = $row['ornaments'];
+    $tattoos = $row['tattoos'];
+    ?>
 
     <tr>
-        <th style="padding:20px; text-align:center">SR No</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['srno'];?></td>
+        <th >SR No</th>
+        <td><?php echo $row['srno'];?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Date</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['date'];?></td>
+        <th >Date</th>
+        <td><?php echo $row['date'];?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Province</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['province'];?></td>
+        <th >Province</th>
+        <td><?php echo $row['province'];?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">District</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['district'];?></td>
+        <th >District</th>
+        <td><?php echo $row['district'];?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Police Area</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['policearea'];?></td>
+        <th >Police Area</th>
+        <td><?php echo $row['policearea'];?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">DNA</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['dna'];?></td>
+        <th >DNA</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($dna)."'alt = ''/ width=300px height=300px>"; ?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Fingerprint</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['fingerprint'];?></td>
+        <th >Fingerprint</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($fingerprint)."'alt = ''/ width=300px height=300px>"; ?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Dental</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['dental'];?></td> 
+        <th >Dental</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($dental)."'alt = ''/ width=300px height=300px>"; ?></td> 
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Facial Photograpgh</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['facialphotograph'];?></td>
+        <th >Facial Photograpgh</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($face)."'alt = ''/ width=300px height=300px>"; ?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Clothes</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['clothes'];?></td>
+        <th >Clothes</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($clothes)."'alt = ''/ width=300px height=300px>"; ?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Ornaments</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['ornaments'];?></td>
+        <th >Ornaments</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($ornaments)."'alt = ''/ width=300px height=300px>"; ?></td>
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Tattoos</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['tattoos'];?></td> 
+        <th >Tattoos</th>
+        <td><?php echo "<img src ='data:image/jpg;base64,".base64_encode($tattoos)."'alt = ''/ width=300px height=300px>"; ?></td> 
     </tr>
     <tr>
-        <th style="padding:20px; text-align:center">Special Remarks</th>
-        <td style="padding:10px; text-align:center"><?php echo $row['specialremarks'];?></td> 
+        <th >Special Remarks</th>
+        <td><?php echo $row['specialremarks'];?></td> 
     </tr>
     <form method="post" action="UploadModel.php">
     <tr>
-        <th style="padding:20px; text-align:center"></th>
+        <th ></th>
         <input type="hidden" name="srno" id="srno" value="<?php echo $row['srno']; ?>" />
-        <td style="padding:10px; text-align:center"><button type="submit" class="btn btn-secondary" >Upload Model</button></td>
+        <td><button type="submit" class="btn btn-secondary" >Upload 3D Models</button></td>
     </tr>
     </form>
     
@@ -108,11 +134,12 @@ if (!isUCSCLoggedIn()){
     </table>
 
     </div>
+
    
         
-    <script src="../../assets/js/jquery.min.js"></script>
-    <script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="../../assets/js/agency.js"></script>
+    <script src="../assets/js/agency.js"></script>
 </body>
 </html>
