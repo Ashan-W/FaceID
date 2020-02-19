@@ -60,8 +60,12 @@
         AddArti();
     }//Add unidentified body details
     if (isset($_POST['adddet'])){
-    AddDetails();
-    }
+        AddDetails();
+    }//Update unidentified body details
+    if (isset($_POST['updateDetails'])){
+        UpdateDetails();
+        }
+       
    
 
     //--------------------------Officials Log in---------------------------------
@@ -237,7 +241,7 @@ function AddArti(){
 }
 //----------------Add details about unidentified bodies--------------
 function AddDetails(){
-    global $link, $srno , $date , $province, $policearea , $nic;
+    global $link, $srno , $date , $province, $policearea , $nic , $err;
 
     $nic = $_SESSION['nic'];
 
@@ -247,7 +251,7 @@ function AddDetails(){
     $policearea = $_POST['policearea'];
     $district = $_POST['district'];
     $dna = $_POST['dna'];
-    $est_age = $_POST['est_ge'];
+    $est_age = $_POST['est_age'];
     $height = $_POST['height'];
     $weight = $_POST['weight'];
     $fingerprint = $_POST['fingerprint'];
@@ -259,8 +263,16 @@ function AddDetails(){
     $specialremarks = $_POST['specialremarks'];
 
 
-
-    $sql= "INSERT INTO unidentifiedbodies (srno , date , province , policearea , district , dna , est_age , height , weight , fingerprint , facialphotograph , clothes , ornaments , tattoos , specialremarks , jmo) 
+    if($srno != ""){
+        $sql = "SELECT * FROM unidentifiedbodies WHERE srno ='$srno'LIMIT 1";
+        $results = $link->query($sql);
+        if($results->num_rows == 1){
+            echo "<script> alert('Details for the given SR No already exists');</script>";
+            $err = $err +1;
+        }
+    }
+    if($err==0){
+        $sql= "INSERT INTO unidentifiedbodies (srno , date , province , policearea , district , dna , est_age , height , weight , fingerprint , facialphotograph , clothes , ornaments , tattoos , specialremarks , jmo) 
                     VALUES ('$srno' , '$date' , '$province' , '$policearea' , '$district' , '$dna', '$est_age' , '$height' , '$weight' , '$fingerprint' , '$facial' ,'$clothes' , '$ornaments' , '$tattoos' ,'$specialremarks' , '$nic') ";
 
 
@@ -270,6 +282,53 @@ function AddDetails(){
         }else{
             echo "Error: " . $sql . "<br>" .$link->error;
         }
+    }
+        
+    $link->close();
+}
+
+//----------------Update details about unidentified bodies--------------
+function UpdateDetails(){
+    global $link, $srno , $date , $province, $policearea , $nic;
+
+    $srno= $_POST['srno'];
+
+    $date = $_POST['date'];
+    $province = $_POST['province'];
+    $policearea = $_POST['policearea'];
+    $district = $_POST['district'];
+    $est_age = $_POST['est_age'];
+    $height = $_POST['height'];
+    $weight = $_POST['weight'];
+    $specialremarks = $_POST['specialremarks'];
+
+    // $dna = $_POST['dna'];
+    // $fingerprint = $_POST['fingerprint'];
+    // $dental = $_POST['dental'];
+    // $facial = $_POST['facial'];
+    // $clothes = $_POST['clothes'];
+    // $ornaments = $_POST['ornaments'];
+    // $tattoos = $_POST['tattoos'];
+    
+
+
+
+    $sql= "UPDATE unidentifiedbodies SET  date='$date' , province='$province' , policearea='$policearea' , district='$district' WHERE srno='$srno'";
+    
+    
+    if($link->query($sql) === TRUE){
+        header('location:ViewRecords.php');
+        echo " Details updated successfully!";
+    }else{
+        echo "Error: " . $sql . "<br>" .$link->error;
+    }
+    
+    //check if the 
+    //  , dna , est_age , height , weight , fingerprint , facialphotograph , clothes , ornaments , tattoos , specialremarks , jmo) 
+    //                  , '$dna', '$est_age' , '$height' , '$weight' , '$fingerprint' , '$facial' ,'$clothes' , '$ornaments' , '$tattoos' ,'$specialremarks' , '$nic') ";
+
+
+        
     $link->close();
 }
     
