@@ -1,129 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style_css/formhospital.css">
     <title>Victim Identification</title>
-
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
     <style>
+        td {
+            font-family: "Times New Roman", Times, serif;
+        }
         
+        input[type=text]:focus {
+            border: 3px solid #555;
+        }
     </style>
 </head>
+
 <body>
-    <div class="container">
-    
-            <form action="./formhospital.php" method="POST">
-                <table style="border:1px solid black; width:60%"; align="center">
-                    <caption>
-                        <h1>VICTIM IDENTIFICATION</h1>
-                        <h2>Dead Body</h2>
-                    </caption>
-                    <tr>
-                        <td>
-                            SRNo: <br>
-                            <input type="text" id="srno" name="srno" placeholder="SRNo.." style="width: 400px"> 
-                        </td>
-                        <td>
-                            Date: <br>
-                            <input type="date" name="date" style="width: 400px">
-                        </td>
-                    </tr><br>
-                    <tr>
-                        <td>
-                            Police Area: <br> 
-                            <select name="policearea" style="width: 403px">
-                                <option value="val1">val1</option>
-                                <option value="val2">val2</option>
-                                <option value="val3">val3</option>
-                                <option value="val4">val4</option>
+    <div class="container" class="text-white">
+
+        <form action="./formhospital.php" method="POST">
+            <table style="border:1px solid black; width:60%" ; align="center">
+                <caption>
+                    <h1>VICTIM IDENTIFICATION </h1>
+                    <h2>Dead Body</h2>
+                </caption>
+                <tr>
+                    <td>
+                        SRNo: <br>
+                        <input type="text" id="srno" name="srno" placeholder="SRNo...." style="width: 400px">
+                    </td>
+                    <td>
+                        Date: <br>
+                        <input type="date" name="date" style="width: 400px">
+                    </td>
+                </tr><br>
+                <tr>
+                     <td>
+                                Police Area: <br>
+                                <input type="text" id="srno" name="policearea" placeholder="Police Area...." style="width: 400px">
+                    </td>
+            
+                    <td>
+                        Province: <br>
+                        <select name="province" style="width: 403px">
+                                <option value="Southern">Southern </option>
+                                <option value="sabara">Sabaragamuwa</option>
+                                <option value="wes">Western</option>
+                                <option value="uva"> Uva</option>
+                                <option value="estern"> Eastern</option>
+                                <option value="central"> Central</option>
+                                <option value="nwestern"> North-Western</option>
+                                <option value="ncentral"> North-Central</option>
+                                <option value="nothern"> Northern</option> 
                             </select>
-                        </td>
-                        <td>
-                            Province: <br> 
-                            <select name="province" style="width: 403px">
-                                <option value="val1">val1</option>
-                                <option value="val2">val2</option>
-                                <option value="val3">val3</option>
-                                <option value="val4">val4</option> 
-                            </select>
-                            </td>
-                    </tr><br>
-                    <tr>
-                        <td>
-                            District: <br> 
-                            <select name="district" style="width: 403px">
-                                <option value="val1">val1</option>
-                                <option value="val2">val2</option>
-                                <option value="val3">val3</option>
-                                <option value="val4">val4</option>
-                            </select><br><br>
-                            Other: <br>
-                            <input type="text" name="other"style="width: 400px"><br><br>
-                            Other2: <br>
-                            <input type="text" name="other2" style="width: 400px">
-                        </td>
-                        <td>
-                            DNA: <br>
-                            <input style="height:150px;width:400px;font-size:11pt" type="text" name="dna"><br><br>
-                        </td>
-                    </tr>
-                    <tr >
-                        <td>
-                            Finger Print: <br>
-                            <input style="height:100px;width:400px;font-size:11pt" type="text" name="fingerprint"><br>
-                            <input type="file" name="fingerprint" accept="image/*">
-                            <br><br>
-                        </td>
-                        <td>
-                            Dental:<br>
-                            <input style="height:100px;width:400px;font-size:11pt" type="text" name="dental"><br>
-                            <input type="file" name="dental" accept="image/*">
-                            <br><br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Facial Photgraph: <br>
-                            <input style="height:100px;width:400px;font-size:11pt" type="text" name="facialphotograph"><br>
-                            <input type="file" name="facialphotograph" accept="image/*">
-                            <br><br>
-                        </td>
-                        <td>                                
-                            Clothes: <br>
-                            <input style="height:100px;width:400px;font-size:11pt" type="text" name="clothes"><br>
-                            <input type="file" name="clothes" accept="image/*">
-                            <br><br>
-                
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Ornaments: <br>
-                            <input style="height:100px;width:400px;font-size:11pt" type="text" name="ornaments"><br>
-                            <input type="file" name="ornaments" accept="image/*">
-                            <br><br>
-                        </td>
-                        <td>
-                            Tattoos: <br>
-                            <input style="height:100px;width:400px;font-size:11pt" type="text" name="tattoos"><br>
-                            <input type="file" name="tattoos" accept="image/*">
-                            <br><br>
-                        </td>
-                    </tr>       
-                    <tr>
+                    </td>
+                </tr><br>
+                <tr>
+                    <td>
+                        District: <br>
+                        <select name="district" style="width: 403px">
+                                <option value="val1">Jaffna</option>
+                                <option value="val2">Kilinochchi</option>
+                                <option value="val3">Mannar</option>
+                                <option value="val4">Mullaitivu</option>
+                                <option value="val1">Vavuniya</option>
+                                <option value="val1">Puttalam</option>
+                                <option value="val1">Kurunegala</option>
+                                <option value="val1">Gampaha</option>
+                                <option value="val1">Colombo</option>
+                                <option value="val1">Kalutara</option>
+                                <option value="val1">Anuradhapura</option>
+                                <option value="val1">Polonnaruwa</option>
+                                <option value="val1">Matale</option>
+                                <option value="val1">Kandy</option>
+                                <option value="val1">Nuwara Eliya</option>
+                                <option value="val1">Kegalle</option>
+                                <option value="val1">Ratnapura</option>
+                                <option value="val1">Trincomalee</option>
+                                <option value="val1">Batticaloa</option>
+                                <option value="val1">Ampara</option>
+                                <option value="val1">Badulla</option>
+                                <option value="val1">Monaragala</option>
+                                <option value="val1">Hambantota</option>
+                                <option value="val1">Matara</option>
+                                <option value="val1">Galle</option>
+                            </select><br><br> 
+                            Other1: <br>
+                        <input type="text" name="other" style="width: 400px" placeholder="other...."><br><br>
+                        
+                        Other2: <br>
+                        <input type="text" name="other2" style="width: 400px">
+                    </td>
+                    <td>
+                        DNA: <br>
+                        <input style="height:150px;width:400px;font-size:11pt" type="text" name="dna" placeholder="DNA...." ><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Finger Print: <br>
+                        <input style="height:100px;width:400px;font-size:11pt" type="text" name="fingerprint" placeholder="Finger Print...."><br>
+                        <input type="file" name="fingerprint" accept="image/*">
+                        <br><br>
+                    </td>
+                    <td>
+                        Dental:<br>
+                        <input style="height:100px;width:400px;font-size:11pt" type="text" name="dental" placeholder=" Denta...."><br>
+                        <input type="file" name="dental" accept="image/*">
+                        <br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Facial Photgraph: <br>
+                        <input style="height:100px;width:400px;font-size:11pt" type="text" name="facialphotograph" placeholder="Facial Photgraph...."><br>
+                        <input type="file" name="facialphotograph" accept="image/*">
+                        <br><br>
+                    </td>
+                    <td>
+                        Clothes: <br>
+                        <input style="height:100px;width:400px;font-size:11pt" type="text" name="clothes" placeholder="Clothes...."><br>
+                        <input type="file" name="clothes" accept="image/*">
+                        <br><br>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Ornaments: <br>
+                        <input style="height:100px;width:400px;font-size:11pt" type="text" name="ornaments" placeholder="Ornaments...."><br>
+                        <input type="file" name="ornaments" accept="image/*">
+                        <br><br>
+                    </td>
+                    <td>
+                        Tattoos: <br>
+                        <input style="height:100px;width:400px;font-size:11pt" type="text" name="tattoos" placeholder="Tattoos...."><br>
+                        <input type="file" name="tattoos" accept="image/*">
+                        <br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Special Remarks: <br>
+                        <input type="text" name="specialremarks" style="width:805px;height: 120px ;text-align:center" placeholder="Special Remarks....">
+                    </td>
+                </tr>
+                <tr>
                         <td colspan="2">
-                            Special Remarks: <br>
-                            <input type="text" name="specialremarks" style="width:865px;height: 120px">
+                            Special Info: <br>
+                            <input type="text" name="special_info" style="width:805px;height: 120px ;text-align:center" placeholder="Special Info....">
                         </td>
                     </tr>
-                    <tr>
-                        <td align="center" colspan="2">
-                            <input type="submit" id="btnsubmit1">
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </div>
+                <tr>
+                    <td align="center" colspan="2">
+                        <input type="submit" id="btnsubmit1" value="Submit">
+                        <form method="get" action="./manage_database.html">
+                            <div>
+                                <br/>
+                                
+                        </form>
+                    </td>
+                </tr>
+
+                
+                </div>
+        </form>
+        </td>
+        </tr>
+    </div>
+    </form>
+    </td>
+    </tr>
+    </table>
+    </form>
+    </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
 </body>
+
+</html>
+
 </html>
