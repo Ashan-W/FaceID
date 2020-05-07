@@ -1,40 +1,56 @@
-input[type=text], select, textarea{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: vertical;
-}
-input[type=date], select, textarea{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: vertical;
-}
-input[type=submit] {
-    background-color: rgb(22, 23, 56);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: center;
-}
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-
-#btnsubmit1{
-    background-color: rgb(22, 23, 56);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: center;
-}
+                        input[type=text],
+                        select,
+                        textarea {
+                            font-family: 'Roboto';
+                            width: 100%;
+                            padding: 12px;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                            resize: vertical;
+                            -webkit-transition: 0.5s;
+                            transition: 0.5s;
+                        }
+                        
+                        input[type=date],
+                        select,
+                        textarea {
+                            width: 100%;
+                            padding: 12px;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                            resize: vertical;
+                        }
+                        
+                        input[type=submit] {
+                            background-color: rgb(22, 23, 56);
+                            color: white;
+                            padding: 12px 20px;
+                            border: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            float: center;
+                        }
+                        
+                        .container {
+                            font-family: 'Roboto';
+                            border-radius: 5px;
+                            background-color: #4e4e4e;
+                            padding: 20px;
+                        }
+                        
+                        #btnsubmit1 {
+                            background-color: rgb(22, 23, 56);
+                            color: white;
+                            padding: 12px 20px;
+                            border: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            float: center;
+                        }
+                        
+                        tr {
+                            background-color: rgb(67, 68, 68);
+                            color: white;
+                        }
