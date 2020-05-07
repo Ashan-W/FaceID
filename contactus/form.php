@@ -1,6 +1,5 @@
 <html>
 <body>
-
 <?php
 
 $con = mysqli_connect("localhost","root","","faceid");
@@ -13,18 +12,18 @@ if (!$con)
 
   }
 
-$fname = $_POST['fname'];
+$name = $_POST['name'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
 $message = $_POST['message'];
+$picture = $_POST['picture'];
 
-$sql="INSERT INTO contactform (fname,phone,email,messages)
+$sql="INSERT INTO inquiries (`name`,`phone`,`email`,`message`,`picture`)
 
 VALUES
 
-('$fname','$phone','$email','$message')";
+('$name','$phone','$email','$message','$picture')";
 
- 
 
 if (!mysqli_query($con, $sql))
 
@@ -32,17 +31,20 @@ if (!mysqli_query($con, $sql))
 
   die('Error: ' . mysqli_error($con));
 
-  }
+  } 
 
-echo "1 record added";
 
- 
+
+
+ echo '<script type="text/javascript">alert("Message Sent!")</script>';
 
 mysqli_close($con)
 
 ?>
 
-
+      <form action="../index.php">
+         <button type="submit">Back To Home</button>
+      </form>
 </body>
 
 </html>

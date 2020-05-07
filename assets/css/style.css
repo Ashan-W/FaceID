@@ -89,10 +89,10 @@ body{
   .login-form .group input[data-type="password"]{
     -webkit-text-security:circle;
   }
-  .login-form .group .label{
+  /* .login-form .group .label{
     color:#aaa;s
     font-size:12px;
-  }
+  } */
   .login-form .group .button{
     background:#1161ee;
   }
@@ -156,3 +156,4 @@ body{
   .foot-lnk{
     text-align:center;
   }
+
